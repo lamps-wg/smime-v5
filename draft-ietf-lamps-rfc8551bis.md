@@ -19,7 +19,7 @@ venue:
   mail: "spasm@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/spasm/"
   github: "lamsp-wg/smime-v5"
-  latest: "https://lamps-wg.github.io/smime/draft-ietf-lamps-rfc8551bis.html"
+  latest: "https://lamps-wg.github.io/smime-v5/draft-ietf-lamps-rfc8551bis.html"
 
 author:
  -
