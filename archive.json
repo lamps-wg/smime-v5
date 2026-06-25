@@ -1,7 +1,7 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-06-23T02:29:44.684602+00:00",
-  "repo": "seanturner/smime",
+  "timestamp": "2026-06-25T02:32:24.277269+00:00",
+  "repo": "lamps-wg/smime-v5",
   "labels": [
     {
       "name": "bug",
@@ -54,10 +54,10 @@
       "number": 1,
       "id": "I_kwDOSg7Q3M8AAAABCo6W2Q",
       "title": "S/MIME 4+ Requested Changes",
-      "url": "https://github.com/seanturner/smime/issues/1",
+      "url": "https://github.com/lamps-wg/smime-v5/issues/1",
       "state": "OPEN",
       "author": "seanturner",
-      "authorAssociation": "OWNER",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "A list of changes (will use sub-issues to track):\n\n# Technical Changes to Incorporate\n- [ ] Address Falco attack; see #2\n    - [ ] Require signed attributes.\n    - [ ] Also, adopt id-ct-mimeData content type from [-cms-euf-cma-signeddata](https://github.com/lamps-wg/cms-euf-cma-signeddata)?\n\n# Changes to Consider Incorporating\n- [ ] Deprecate EnvelopedData (and AES-CBC)?\n- [ ] Deprecate RSA encryption?\n- [ ] Keep RSA-OAEP?\n- [ ] Add PQ support?\n- [ ] Drop '88 ASN.1 Module?\n\n# Editorial\n- [ ] Pick version\n    - [ ] Change Title and Abbreviation to be \"4+\" until we decide on #\n    - [ ] Incorporate # number throughout\n- [ ] Review and update references, e.g., latest ASN.1, FIPS, ...\n- [ ] Italicize all the field names (now that we're not in the '80s we can use formatting)",
@@ -70,10 +70,10 @@
       "number": 2,
       "id": "I_kwDOSg7Q3M8AAAABCo7q6Q",
       "title": "Address Falco Attack",
-      "url": "https://github.com/seanturner/smime/issues/2",
+      "url": "https://github.com/lamps-wg/smime-v5/issues/2",
       "state": "OPEN",
       "author": "seanturner",
-      "authorAssociation": "OWNER",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "There are two ways to address the FALCO attack. Which way do we want to go:\n\n1. Simply always require some signed attributes.\n2. Also, adopt id-ct-mimeData content type from [-cms-euf-cma-signeddata](https://github.com/lamps-wg/cms-euf-cma-signeddata).",
@@ -83,5 +83,73 @@
       "comments": []
     }
   ],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 3,
+      "id": "PR_kwDOSg7Q3M7pp1nU",
+      "title": "Convert to WG version",
+      "url": "https://github.com/lamps-wg/smime-v5/pull/3",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-06-23T12:54:48Z",
+      "updatedAt": "2026-06-23T13:05:04Z",
+      "baseRepository": "lamps-wg/smime-v5",
+      "baseRefName": "main",
+      "baseRefOid": "878a0ad454712b46744761796b78265f6d1bfc4a",
+      "headRepository": "lamps-wg/smime-v5",
+      "headRefName": "seanturner-create-wg-version",
+      "headRefOid": "4579510f7259526d48a138dfee37ad20e70179ab",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABD2iRKw",
+          "commit": {
+            "abbreviatedOid": "2f1183b"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-06-23T13:01:10Z",
+          "updatedAt": "2026-06-23T13:01:10Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "```suggestion\n  latest: \"https://lamps-wg.github.io/smime-v5/draft-ietf-lamps-rfc8550bis.html\"\n```",
+              "createdAt": "2026-06-23T13:01:10Z",
+              "updatedAt": "2026-06-23T13:01:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABD2ib-A",
+          "commit": {
+            "abbreviatedOid": "4bd9e57"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-06-23T13:01:31Z",
+          "updatedAt": "2026-06-23T13:01:31Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "```suggestion\n  latest: \"https://lamps-wg.github.io/smime-v5/draft-ietf-lamps-rfc8551bis.html\"\n```",
+              "createdAt": "2026-06-23T13:01:31Z",
+              "updatedAt": "2026-06-23T13:01:31Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
