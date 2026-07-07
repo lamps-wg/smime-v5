@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-06-25T02:32:24.277269+00:00",
+  "timestamp": "2026-07-07T02:12:51.290157+00:00",
   "repo": "lamps-wg/smime-v5",
   "labels": [
     {
@@ -96,7 +96,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-06-23T12:54:48Z",
-      "updatedAt": "2026-06-23T13:05:04Z",
+      "updatedAt": "2026-07-05T15:16:34Z",
       "baseRepository": "lamps-wg/smime-v5",
       "baseRefName": "main",
       "baseRefOid": "878a0ad454712b46744761796b78265f6d1bfc4a",
@@ -148,6 +148,19 @@
               "updatedAt": "2026-06-23T13:01:31Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABFA-Cmg",
+          "commit": {
+            "abbreviatedOid": "4579510"
+          },
+          "author": "bcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-07-05T15:16:34Z",
+          "updatedAt": "2026-07-05T15:16:34Z",
+          "comments": []
         }
       ]
     }
