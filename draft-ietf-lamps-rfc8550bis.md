@@ -3,7 +3,7 @@ title: "Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4.0 Certif
 abbrev: "S/MIME 4.0 Certificate Handling"
 category: std
 
-docname: draft-turner-lamps-rfc8550bis-latest
+docname: draft-ietf-lamps-rfc8550bis-latest
 submissiontype: IETF
 ipr: pre5378Trust200902
 number:
@@ -18,8 +18,8 @@ venue:
   type: "Working Group"
   mail: "spasm@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/spasm/"
-  github: "seanturner/smime"
-  latest: "https://seanturner.github.io/smime/draft-turner-lamps-rfc8550bis.html"
+  github: "lamps-wg/smime-v5"
+  latest: "https://lamps-wg.github.io/smime-v5/draft-ietf-lamps-rfc8550bis.html"
 
 author:
  -
