@@ -2,16 +2,16 @@
 
 
 
-LAMPS                                                        B. Ramsdell
+Limited Additional Mechanisms for PKIX and SMIME             B. Ramsdell
 Internet-Draft                                    Brute Squad Labs, Inc.
 Intended status: Standards Track                               S. Turner
-Expires: 19 November 2026                                          sn3rd
-                                                             18 May 2026
+Expires: 24 January 2027                                           sn3rd
+                                                            23 July 2026
 
 
    Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4.0
                          Message Specification
-                  draft-turner-lamps-rfc8551bis-latest
+                   draft-ietf-lamps-rfc8551bis-latest
 
 Abstract
 
@@ -26,18 +26,19 @@ About This Document
 
    This note is to be removed before publishing as an RFC.
 
-   The latest revision of this draft can be found at
-   https://seanturner.github.io/smime/draft-turner-lamps-
-   rfc8551bis.html.  Status information for this document may be found
-   at https://datatracker.ietf.org/doc/draft-turner-lamps-rfc8551bis/.
+   The latest revision of this draft can be found at https://lamps-
+   wg.github.io/smime-v5/draft-ietf-lamps-rfc8551bis.html.  Status
+   information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-ietf-lamps-rfc8551bis/.
 
-   Discussion of this document takes place on the LAMPS Working Group
-   mailing list (mailto:spasm@ietf.org), which is archived at
-   mailarchive.ietf.org/arch/browse/spasm/.  Subscribe at
+   Discussion of this document takes place on the Limited Additional
+   Mechanisms for PKIX and SMIME Working Group mailing list
+   (mailto:spasm@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/spasm/.  Subscribe at
    https://www.ietf.org/mailman/listinfo/spasm/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/seanturner/smime.
+   https://github.com/lamsp-wg/smime-v5.
 
 Status of This Memo
 
@@ -54,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 November 2026.
+   This Internet-Draft will expire on 24 January 2027.
 
 Copyright Notice
 
@@ -2195,8 +2196,8 @@ Table of Contents
               <https://www.rfc-editor.org/rfc/rfc3274>.
 
    [RFC3370]  Housley, R., "Cryptographic Message Syntax (CMS)
-              Algorithms", RFC 3370, DOI 10.17487/RFC3370, August 2002,
-              <https://www.rfc-editor.org/rfc/rfc3370>.
+              Algorithms", RFC 3370, DOI 10.17487/RFC3370, September
+              2002, <https://www.rfc-editor.org/rfc/rfc3370>.
 
    [RFC3560]  Housley, R., "Use of the RSAES-OAEP Key Transport
               Algorithm in Cryptographic Message Syntax (CMS)",
@@ -2394,7 +2395,7 @@ Table of Contents
 
    [RFC4270]  Hoffman, P. and B. Schneier, "Attacks on Cryptographic
               Hashes in Internet Protocols", RFC 4270,
-              DOI 10.17487/RFC4270, November 2005,
+              DOI 10.17487/RFC4270, December 2005,
               <https://www.rfc-editor.org/rfc/rfc4270>.
 
    [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",

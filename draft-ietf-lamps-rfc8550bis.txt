@@ -2,16 +2,16 @@
 
 
 
-LAMPS                                                        B. Ramsdell
+Limited Additional Mechanisms for PKIX and SMIME             B. Ramsdell
 Internet-Draft                                          Brute Squad Labs
 Intended status: Standards Track                               S. Turner
-Expires: 19 November 2026                                          sn3rd
-                                                             18 May 2026
+Expires: 24 January 2027                                           sn3rd
+                                                            23 July 2026
 
 
    Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4.0
                           Certificate Handling
-                  draft-turner-lamps-rfc8550bis-latest
+                   draft-ietf-lamps-rfc8550bis-latest
 
 Abstract
 
@@ -29,18 +29,19 @@ About This Document
 
    This note is to be removed before publishing as an RFC.
 
-   The latest revision of this draft can be found at
-   https://seanturner.github.io/smime/draft-turner-lamps-
-   rfc8550bis.html.  Status information for this document may be found
-   at https://datatracker.ietf.org/doc/draft-turner-lamps-rfc8550bis/.
+   The latest revision of this draft can be found at https://lamps-
+   wg.github.io/smime-v5/draft-ietf-lamps-rfc8550bis.html.  Status
+   information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-ietf-lamps-rfc8550bis/.
 
-   Discussion of this document takes place on the LAMPS Working Group
-   mailing list (mailto:spasm@ietf.org), which is archived at
-   mailarchive.ietf.org/arch/browse/spasm/.  Subscribe at
+   Discussion of this document takes place on the Limited Additional
+   Mechanisms for PKIX and SMIME Working Group mailing list
+   (mailto:spasm@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/spasm/.  Subscribe at
    https://www.ietf.org/mailman/listinfo/spasm/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/seanturner/smime.
+   https://github.com/lamps-wg/smime-v5.
 
 Status of This Memo
 
@@ -57,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 November 2026.
+   This Internet-Draft will expire on 24 January 2027.
 
 Copyright Notice
 
@@ -934,8 +935,8 @@ Table of Contents
    [RFC3279]  Bassham, L., Polk, W., and R. Housley, "Algorithms and
               Identifiers for the Internet X.509 Public Key
               Infrastructure Certificate and Certificate Revocation List
-              (CRL) Profile", RFC 3279, DOI 10.17487/RFC3279, April
-              2002, <https://www.rfc-editor.org/rfc/rfc3279>.
+              (CRL) Profile", RFC 3279, DOI 10.17487/RFC3279, May 2002,
+              <https://www.rfc-editor.org/rfc/rfc3279>.
 
    [RFC3447]  Jonsson, J. and B. Kaliski, "Public-Key Cryptography
               Standards (PKCS) #1: RSA Cryptography Specifications
