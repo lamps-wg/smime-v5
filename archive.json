@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-21T01:51:57.365140+00:00",
+  "timestamp": "2026-07-26T01:57:28.702450+00:00",
   "repo": "lamps-wg/smime-v5",
   "labels": [
     {
@@ -89,24 +89,26 @@
       "id": "PR_kwDOSg7Q3M7pp1nU",
       "title": "Convert to WG version",
       "url": "https://github.com/lamps-wg/smime-v5/pull/3",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-06-23T12:54:48Z",
-      "updatedAt": "2026-07-05T15:16:34Z",
+      "updatedAt": "2026-07-23T09:25:46Z",
       "baseRepository": "lamps-wg/smime-v5",
       "baseRefName": "main",
       "baseRefOid": "878a0ad454712b46744761796b78265f6d1bfc4a",
       "headRepository": "lamps-wg/smime-v5",
       "headRefName": "seanturner-create-wg-version",
       "headRefOid": "4579510f7259526d48a138dfee37ad20e70179ab",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-07-23T09:25:46Z",
+      "mergedAt": "2026-07-23T09:25:46Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "e56685b62613bd14515ea1dc36320af4732d8196"
+      },
       "comments": [],
       "reviews": [
         {
@@ -169,24 +171,26 @@
       "id": "PR_kwDOSg7Q3M7z2RLv",
       "title": "Create README.md",
       "url": "https://github.com/lamps-wg/smime-v5/pull/4",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-07-20T12:39:04Z",
-      "updatedAt": "2026-07-20T12:41:09Z",
+      "updatedAt": "2026-07-23T09:26:13Z",
       "baseRepository": "lamps-wg/smime-v5",
       "baseRefName": "main",
       "baseRefOid": "878a0ad454712b46744761796b78265f6d1bfc4a",
       "headRepository": "lamps-wg/smime-v5",
       "headRefName": "seanturner-presentation-repo",
       "headRefOid": "95008fe1600407961b56180c926e654bc48a262a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-07-23T09:26:12Z",
+      "mergedAt": "2026-07-23T09:26:12Z",
+      "mergedBy": "seanturner",
+      "mergeCommit": {
+        "oid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f"
+      },
       "comments": [],
       "reviews": []
     }
