@@ -5,8 +5,8 @@
 Limited Additional Mechanisms for PKIX and SMIME             B. Ramsdell
 Internet-Draft                                          Brute Squad Labs
 Intended status: Standards Track                               S. Turner
-Expires: 25 December 2026                                          sn3rd
-                                                            23 June 2026
+Expires: 28 January 2027                                           sn3rd
+                                                            27 July 2026
 
 
    Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4.0
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 December 2026.
+   This Internet-Draft will expire on 28 January 2027.
 
 Copyright Notice
 
