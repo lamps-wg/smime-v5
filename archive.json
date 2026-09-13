@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-26T01:57:28.702450+00:00",
+  "timestamp": "2026-09-13T02:17:08.787927+00:00",
   "repo": "lamps-wg/smime-v5",
   "labels": [
     {
@@ -60,27 +60,42 @@
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
-      "body": "A list of changes (will use sub-issues to track):\n\n# Technical Changes to Incorporate\n- [ ] Address Falco attack; see #2\n    - [ ] Require signed attributes.\n    - [ ] Also, adopt id-ct-mimeData content type from [-cms-euf-cma-signeddata](https://github.com/lamps-wg/cms-euf-cma-signeddata)?\n\n# Changes to Consider Incorporating\n- [ ] Deprecate EnvelopedData (and AES-CBC)?\n- [ ] Deprecate RSA encryption?\n- [ ] Keep RSA-OAEP?\n- [ ] Add PQ support?\n- [ ] Drop '88 ASN.1 Module?\n\n# Editorial\n- [ ] Pick version\n    - [ ] Change Title and Abbreviation to be \"4+\" until we decide on #\n    - [ ] Incorporate # number throughout\n- [ ] Review and update references, e.g., latest ASN.1, FIPS, ...\n- [ ] Italicize all the field names (now that we're not in the '80s we can use formatting)",
+      "body": "A list of changes (will use sub-issues to track):\n\n# Technical Changes to Incorporate\n- [ ] Address Falko attack; see #2\n    - [ ] Require signed attributes.\n    - [ ] Also, adopt id-ct-mimeData content type from [-cms-euf-cma-signeddata](https://github.com/lamps-wg/cms-euf-cma-signeddata)?\n\n# Changes to Consider Incorporating\n- [ ] Deprecate EnvelopedData (and AES-CBC)?\n- [ ] Deprecate RSA encryption?\n- [ ] Keep RSA-OAEP?\n- [ ] Add PQ support?\n- [ ] Drop '88 ASN.1 Module?\n\n# Editorial\n- [ ] Pick version\n    - [ ] Change Title and Abbreviation to be \"4+\" until we decide on #\n    - [ ] Incorporate # number throughout\n- [ ] Review and update references, e.g., latest ASN.1, FIPS, ...\n- [ ] Italicize all the field names (now that we're not in the '80s we can use formatting)",
       "createdAt": "2026-05-18T19:47:23Z",
-      "updatedAt": "2026-05-29T12:35:54Z",
+      "updatedAt": "2026-09-10T13:38:20Z",
       "closedAt": null,
       "comments": []
     },
     {
       "number": 2,
       "id": "I_kwDOSg7Q3M8AAAABCo7q6Q",
-      "title": "Address Falco Attack",
+      "title": "Address Falko Attack",
       "url": "https://github.com/lamps-wg/smime-v5/issues/2",
       "state": "OPEN",
       "author": "seanturner",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
-      "body": "There are two ways to address the FALCO attack. Which way do we want to go:\n\n1. Simply always require some signed attributes.\n2. Also, adopt id-ct-mimeData content type from [-cms-euf-cma-signeddata](https://github.com/lamps-wg/cms-euf-cma-signeddata).",
+      "body": "There are two ways to address the FALKO attack. Which way do we want to go:\n\n1. Simply always require some signed attributes.\n2. Also, adopt id-ct-mimeData content type from [-cms-euf-cma-signeddata](https://github.com/lamps-wg/cms-euf-cma-signeddata).",
       "createdAt": "2026-05-18T19:50:41Z",
-      "updatedAt": "2026-05-18T19:50:41Z",
+      "updatedAt": "2026-09-10T13:37:57Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "danvangeest",
+          "authorAssociation": "NONE",
+          "body": "I think there is also a concern if an implementation can output v4 or v5 S/MIME depending on the recipient.  If they are using the same signing key, and their v4 implementation didn't use signed attributes, and they can be induced to signed attacker-controlled data, an attacker could craft a message to be signed under v4 which looks like a SignedAttributes containing the new v5 content-type and a message-digest of an attacker-controlled message.\n\nThis would also be a concern if there are multiple implementations using the same signing key, e.g. a mobile and a desktop client, one sending v4 and the other v5.\n\nThis could be mitigated by requiring different signing keys for v4 vs v5, although I don't know how feasible that is.  Since we're intending to move to PQ signature algorithms, we may have to deal with concurrent signing keys during the transition anyways.",
+          "createdAt": "2026-09-10T08:50:10Z",
+          "updatedAt": "2026-09-10T08:50:10Z"
+        },
+        {
+          "author": "danvangeest",
+          "authorAssociation": "NONE",
+          "body": "Also it's Falko with a k :)",
+          "createdAt": "2026-09-10T08:51:32Z",
+          "updatedAt": "2026-09-10T08:51:32Z"
+        }
+      ]
     }
   ],
   "pulls": [
