@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-13T02:17:08.787927+00:00",
+  "timestamp": "2026-09-24T02:23:56.491527+00:00",
   "repo": "lamps-wg/smime-v5",
   "labels": [
     {
@@ -60,9 +60,9 @@
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
-      "body": "A list of changes (will use sub-issues to track):\n\n# Technical Changes to Incorporate\n- [ ] Address Falko attack; see #2\n    - [ ] Require signed attributes.\n    - [ ] Also, adopt id-ct-mimeData content type from [-cms-euf-cma-signeddata](https://github.com/lamps-wg/cms-euf-cma-signeddata)?\n\n# Changes to Consider Incorporating\n- [ ] Deprecate EnvelopedData (and AES-CBC)?\n- [ ] Deprecate RSA encryption?\n- [ ] Keep RSA-OAEP?\n- [ ] Add PQ support?\n- [ ] Drop '88 ASN.1 Module?\n\n# Editorial\n- [ ] Pick version\n    - [ ] Change Title and Abbreviation to be \"4+\" until we decide on #\n    - [ ] Incorporate # number throughout\n- [ ] Review and update references, e.g., latest ASN.1, FIPS, ...\n- [ ] Italicize all the field names (now that we're not in the '80s we can use formatting)",
+      "body": "A list of changes (will use sub-issues to track):\n\n# Technical Changes to Incorporate\n- [ ] Address Falko attack; see #2\n    - [ ] Require signed attributes, or\n    - [ ] Adopt id-ct-mimeData content type from [-cms-euf-cma-signeddata](https://github.com/lamps-wg/cms-euf-cma-signeddata)?\n\n# Changes to Consider Incorporating\n- [ ] Deprecate EnvelopedData (and AES-CBC)?\n- [ ] Deprecate RSA encryption?\n- [ ] Keep RSA-OAEP?\n- [ ] Add PQ support?\n- [ ] Drop '88 ASN.1 Module?\n\n# Editorial\n- [ ] Pick version\n    - [ ] Change Title and Abbreviation to be \"4+\" until we decide on #\n    - [ ] Incorporate # number throughout\n- [ ] Review and update references, e.g., latest ASN.1, FIPS, ...\n- [ ] Italicize all the field names (now that we're not in the '80s we can use formatting)",
       "createdAt": "2026-05-18T19:47:23Z",
-      "updatedAt": "2026-09-10T13:38:20Z",
+      "updatedAt": "2026-09-24T01:00:38Z",
       "closedAt": null,
       "comments": []
     },
