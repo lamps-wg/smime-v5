@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-24T02:23:56.491527+00:00",
+  "timestamp": "2026-10-25T02:27:54.494228+00:00",
   "repo": "lamps-wg/smime-v5",
   "labels": [
     {
@@ -62,9 +62,17 @@
       "labels": [],
       "body": "A list of changes (will use sub-issues to track):\n\n# Technical Changes to Incorporate\n- [ ] Address Falko attack; see #2\n    - [ ] Require signed attributes, or\n    - [ ] Adopt id-ct-mimeData content type from [-cms-euf-cma-signeddata](https://github.com/lamps-wg/cms-euf-cma-signeddata)?\n\n# Changes to Consider Incorporating\n- [ ] Deprecate EnvelopedData (and AES-CBC)?\n- [ ] Deprecate RSA encryption?\n- [ ] Keep RSA-OAEP?\n- [ ] Add PQ support?\n- [ ] Drop '88 ASN.1 Module?\n\n# Editorial\n- [ ] Pick version\n    - [ ] Change Title and Abbreviation to be \"4+\" until we decide on #\n    - [ ] Incorporate # number throughout\n- [ ] Review and update references, e.g., latest ASN.1, FIPS, ...\n- [ ] Italicize all the field names (now that we're not in the '80s we can use formatting)",
       "createdAt": "2026-05-18T19:47:23Z",
-      "updatedAt": "2026-09-24T01:00:38Z",
+      "updatedAt": "2026-10-22T13:39:05Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "henning-krause",
+          "authorAssociation": "NONE",
+          "body": "I would like to see PQ support. \n\nThings that could be dropped from my perspective (as someone who has implemented most of SMIME4 in our product): \n* EdDSA: At least in Germany, no trust center sells certificate with curve25519; none of our customers asked for that at any time\n* ChaCha-Poly: I don't know of any product which support this for SMIME. Even OpenSSL does not support it in its CMS command, last time I checked.\n\nI think I would keep RSA for interoperability. At least we se mostly RSA certs; EC certificates are very seldom used. As for OAEP: The Federal Office for Information Security (BSI) in Germany advocates for OAEP over PKCS1.5... and I think it will consider PKCS 1.5 insecure in the near future.",
+          "createdAt": "2026-10-22T13:37:23Z",
+          "updatedAt": "2026-10-22T13:39:05Z"
+        }
+      ]
     },
     {
       "number": 2,
