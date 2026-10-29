@@ -2,6 +2,7 @@
 title: "Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4.0 Certificate Handling"
 abbrev: "S/MIME 4.0 Certificate Handling"
 category: std
+obsoletes: 8550
 
 docname: draft-ietf-lamps-rfc8550bis-latest
 submissiontype: IETF
