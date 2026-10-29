@@ -2,6 +2,7 @@
 title: "Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4.0 Message Specification"
 abbrev: "S/MIME 4.0 Message Specification"
 category: std
+obsoletes: 8551
 
 docname: draft-ietf-lamps-rfc8551bis-latest
 submissiontype: IETF
