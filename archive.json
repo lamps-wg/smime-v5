@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-25T02:27:54.494228+00:00",
+  "timestamp": "2026-11-01T03:28:22.868622+00:00",
   "repo": "lamps-wg/smime-v5",
   "labels": [
     {
@@ -214,6 +214,58 @@
       "mergeCommit": {
         "oid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOSg7Q3M8AAAABLlOnGQ",
+      "title": "rfc8550bis: Add obsoletes header",
+      "url": "https://github.com/lamps-wg/smime-v5/pull/5",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-10-29T16:57:44Z",
+      "updatedAt": "2026-10-29T16:57:44Z",
+      "baseRepository": "lamps-wg/smime-v5",
+      "baseRefName": "main",
+      "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
+      "headRepository": "lamps-wg/smime-v5",
+      "headRefName": "seanturner-obs-header",
+      "headRefOid": "b57cfdb3e1282e675bd7d62991d88fc451837caf",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOSg7Q3M8AAAABLlPd2Q",
+      "title": "rfc8551bis: Add obsoletes header",
+      "url": "https://github.com/lamps-wg/smime-v5/pull/6",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-10-29T16:58:40Z",
+      "updatedAt": "2026-10-29T16:58:40Z",
+      "baseRepository": "lamps-wg/smime-v5",
+      "baseRefName": "main",
+      "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
+      "headRepository": "lamps-wg/smime-v5",
+      "headRefName": "seanturner-rfc8551bis-obs-header",
+      "headRefOid": "8a0bc3d47998b43fdbd6d331ea3b7ffc5f8b06e6",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
