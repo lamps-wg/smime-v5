@@ -1,6 +1,6 @@
 ---
-title: "Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4.0 Certificate Handling"
-abbrev: "S/MIME 4.0 Certificate Handling"
+title: "Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 5.0 Certificate Handling"
+abbrev: "S/MIME 5.0 Certificate Handling"
 category: std
 
 docname: draft-ietf-lamps-rfc8550bis-latest
@@ -89,22 +89,22 @@ informative:
 --- abstract
 
 This document specifies conventions for X.509 certificate usage by
-Secure/Multipurpose Internet Mail Extensions (S/MIME) v4.0 agents.
+Secure/Multipurpose Internet Mail Extensions (S/MIME) v5.0 agents.
 S/MIME provides a method to send and receive secure MIME messages,
 and certificates are an integral part of S/MIME agent processing.
 S/MIME agents validate certificates as described in RFC 5280
 ("Internet X.509 Public Key Infrastructure Certificate and
 Certificate Revocation List (CRL) Profile").  S/MIME agents must meet
 the certificate-processing requirements in this document as well as
-those in RFC 5280.  This document obsoletes RFC 5750.
+those in RFC 5280.  This document obsoletes RFC 8550.
 
 
 --- middle
 
 # Introduction
 
-S/MIME (Secure/Multipurpose Internet Mail Extensions) v4.0, described
-in {{!RFC8551}}, provides a method to send and receive secure MIME
+S/MIME (Secure/Multipurpose Internet Mail Extensions) v5.0, described
+in {{!I-D.draft-ietf-lamps-rfc8551bis}}, provides a method to send and receive secure MIME
 messages.  Before using a public key to provide security services,
 the S/MIME agent MUST verify that the public key is valid.  S/MIME
 agents MUST use PKIX certificates to validate public keys as
@@ -118,7 +118,7 @@ Syntax (CMS) {{!RFC5652}} in that it uses the data types defined by CMS.
 It also inherits all the varieties of architectures for certificate-
 based key management supported by CMS.
 
-This document obsoletes {{!RFC5750}}.  The most significant changes
+This document obsoletes {{?RFC8550}}.  The most significant changes
 revolve around changes in recommendations around the cryptographic
 algorithms used by the specification.  More details can be found in
 {{latest-changes}}.
@@ -215,8 +215,8 @@ The following reference conventions are used:
 
 [ESS] refers to {{!RFC2634}} and {{!RFC5035}}.
 
-[SMIMEv2] refers to {{?RFC2311}}, {{?RFC2312}}, {{?RFC2313}}, {{?RFC2314}}, and
-{{?RFC2315}}.
+[SMIMEv2] refers to {{?RFC2311}}, {{?RFC2312}}, {{?RFC2313}}, {{?RFC2314}},
+and {{?RFC2315}}.
 
 [SMIMEv3] refers to {{?RFC2630}}, {{?RFC2631}}, {{?RFC2632}}, {{?RFC2633}},
 {{RFC2634}}, and {{RFC5035}}.
@@ -224,16 +224,15 @@ The following reference conventions are used:
 [SMIMEv3.1] refers to {{RFC2634}}, {{?RFC3850}}, {{?RFC3851}}, {{?RFC3852}},
 and {{RFC5035}}.
 
-[SMIMEv3.2] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}}, {{RFC5750}},
+[SMIMEv3.2] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}}, {{?RFC5750}},
 and {{?RFC5751}}.
 
-[SMIMEv4] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}}, {{?RFC8550}}, and
-{{?RFC8551}}.
-
+[SMIMEv4] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}}, {{?RFC8550}},
+and {{?RFC8551}}.
 
 ## Compatibility with Prior Practice of S/MIME
 
-S/MIME version 4.0 agents ought to attempt to have the greatest
+S/MIME version 5.0 agents ought to attempt to have the greatest
 interoperability possible with agents for prior versions of S/MIME.
 
 -  S/MIME version 2 is described in RFC 2311 through RFC 2315
@@ -247,6 +246,9 @@ interoperability possible with agents for prior versions of S/MIME.
 
 -  S/MIME version 3.2 is described in RFC 2634, RFC 5035, RFC 5652,
    RFC 5750, and RFC 5751 [SMIMEv3.2].
+
+-  S/MIME version 4.0 is described in RFC 2634, RFC 5035, RFC 5652,
+   RFC 8550, and RFC 8551 [SMIMEv4.0].
 
 -  RFC 2311 also has historical information about the development of
    S/MIME.
@@ -296,7 +298,7 @@ released.  The language of RFC 2119 ("MUST", "SHOULD", etc.) used for
 S/MIME v3.1 may have been superseded in later versions.
 
 Note that the section numbers listed here (e.g., "Section 6") are
-from {{?RFC5750}}.
+from {{RFC5750}}.
 
 -  Moved "Conventions Used in This Document" to Section 1.2.  Added
    definitions for SHOULD+, SHOULD-, and MUST-.
@@ -330,12 +332,15 @@ from {{?RFC5750}}.
 -  Appendix A: Added Appendix A to move S/MIME v2 Certificate
    Handling to Historic status.
 
-## Changes since S/MIME 3.2 {#latest-changes}
+## Changes from S/MIME 3.2 to S/MIME 4.0
 
 This section reflects the changes that were made when S/MIME v4.0 was
 released.  The language of RFC 2119 ("MUST", "SHOULD", etc.) used for
 S/MIME v3.2 may have been superseded by S/MIME v4.0 and may be
 superseded by future versions.
+
+Note that the section numbers listed here (e.g., "Section 3") are
+from {{RFC8550}}.
 
 -  Section 3: Support for internationalized email addresses is
    required.
@@ -352,6 +357,10 @@ superseded by future versions.
 -  Appendix A: Added Appendix A for algorithms that are now
    considered to be historical.
 
+## Changes since S/MIME v4.0 {#latest-changes}
+
+This section reflects the changes that were made when S/MIME v5.0 was
+released.
 
 # CMS Options
 
@@ -359,7 +368,7 @@ The CMS message format allows for a wide variety of options in
 content and algorithm support.  This section puts forth a number of
 support requirements and recommendations in order to achieve a base
 level of interoperability among all S/MIME implementations.  Most of
-the CMS format for S/MIME messages is defined in {{RFC8551}}.
+the CMS format for S/MIME messages is defined in {{I-D.ietf-lamps-rfc8551bis}}.
 
 ## Certificate Revocation Lists
 
@@ -547,7 +556,7 @@ Receiving and sending agents SHOULD provide a mechanism for the
 import and export of certificates, using a CMS certs-only message.
 This allows for import and export of full certificate chains as
 opposed to just a single certificate.  This is described in
-{{RFC8551}}.
+{{I-D.ietf-lamps-rfc8551bis}}.
 
 Agents MUST handle multiple valid CA certificates containing the same
 subject name and the same public keys but with overlapping validity
@@ -964,7 +973,7 @@ second provides the signature algorithm's definition.
 # Moving S/MIME v2 Certificate Handling to Historic Status
 
 The S/MIME v3 [SMIMEv3], v3.1 [SMIMEv3.1], v3.2 [SMIMEv3.2], and v4.0
-(this document) specifications are backward compatible with the
+[SMIMEv4] specifications are backward compatible with the
 S/MIME v2 Certificate Handling Specification [SMIMEv2], with the
 exception of the algorithms (dropped RC2/40 requirement, and added
 DSA and RSASSA-PSS requirements).  Therefore, RFC 2312 [SMIMEv2] was
@@ -975,7 +984,7 @@ moved to Historic status.
 
 Many thanks go out to the other authors of the S/MIME v2 Certificate
 Handling RFC: Steve Dusse, Paul Hoffman, and Jeff Weinstein.  Without
-v2, there wouldn't be a v3, v3.1, v3.2, or v4.0.
+v2, there wouldn't be a v3, v3.1, v3.2, v4.0, or v5.0.
 
 A number of the members of the S/MIME Working Group have also worked
 very hard and contributed to this document.  Any list of people is
