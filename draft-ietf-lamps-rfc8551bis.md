@@ -1,6 +1,6 @@
 ---
-title: "Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 4.0 Message Specification"
-abbrev: "S/MIME 4.0 Message Specification"
+title: "Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 5.0 Message Specification"
+abbrev: "S/MIME 5.0 Message Specification"
 category: std
 
 docname: draft-ietf-lamps-rfc8551bis-latest
@@ -133,11 +133,11 @@ informative:
 --- abstract
 
 This document defines Secure/Multipurpose Internet Mail Extensions
-(S/MIME) version 4.0.  S/MIME provides a consistent way to send and
+(S/MIME) version 5.0.  S/MIME provides a consistent way to send and
 receive secure MIME data.  Digital signatures provide authentication,
 message integrity, and non-repudiation with proof of origin.
 Encryption provides data confidentiality.  Compression can be used to
-reduce data size.  This document obsoletes RFC 5751.
+reduce data size.  This document obsoletes RFC 8551.
 
 
 --- middle
@@ -167,9 +167,9 @@ use cryptographic security services that do not require any human
 intervention, such as the signing of software-generated documents and
 the encryption of FAX messages sent over the Internet.
 
-This document defines version 4.0 of the S/MIME Message
-Specification.  As such, this document obsoletes version 3.2 of the
-S/MIME Message Specification {{?RFC5751}}.
+This document defines version 5.0 of the S/MIME Message
+Specification.  As such, this document obsoletes version 4.0 of the
+S/MIME Message Specification {{?RFC8551}}.
 
 This specification contains a number of references to documents that
 have been obsoleted or replaced.  This is intentional, as the updated
@@ -327,17 +327,17 @@ The following conventions are used:
 {{RFC2634}}, and {{RFC5035}}.
 
 [SMIMEv3.1] refers to {{RFC2634}}, {{RFC5035}}}, {{RFC5652}}, {{?RFC5750}}, and
-{{RFC5751}}.
+{{?RFC5751}}.
 
 [SMIMEv3.2] refers to {{RFC2634}}, {{?RFC3850}}, {{?RFC3851}}, {{?RFC3852}}, and
 {{RFC5035}}.
 
-[SMIMEv4] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}, {{!RFC8550}}, and
+[SMIMEv4] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}, {{?RFC8550}}, and
 this document.
 
 ## Compatibility with Prior Practice of S/MIME
 
-S/MIME version 4.0 agents ought to attempt to have the greatest
+S/MIME version 5.0 agents ought to attempt to have the greatest
 interoperability possible with agents for prior versions of S/MIME.
 
 - S/MIME version 2 is described in RFC 2311 through RFC 2315
@@ -351,6 +351,9 @@ interoperability possible with agents for prior versions of S/MIME.
 
 - S/MIME version 3.2 is described in RFC 2634, RFC 5035, RFC 5652,
   RFC 5750, and RFC 5751 [SMIMEv3.2].
+
+- S/MIME version 4.0 is described in RFC 2634, RFC 5035, RFC 5652,
+  RFC 8550, and RFC 8551 [SMIMEv4.0].
 
 - {{RFC2311}} also has historical information about the development of
   S/MIME.
@@ -391,7 +394,7 @@ This section describes the changes made between S/MIME v3.1 and
 S/MIME v3.2.  Note that the requirement levels indicated by the
 capitalized key words ("MUST", "SHOULD", etc.) may have changed in
 later versions of S/MIME.  Note that the section numbers listed here
-(e.g., 3.4.3.2) are from {{?RFC5751}}.
+(e.g., 3.4.3.2) are from {{RFC5751}}.
 
 - Made editorial changes, e.g., replaced "MIME type" with "media
   type", "content-type" with "Content-Type".
@@ -465,10 +468,13 @@ later versions of S/MIME.  Note that the section numbers listed here
 
 - Appendix B: Added Appendix B to move S/MIME v2 to Historic status.
 
-## Changes for S/MIME v4.0
+## Changes from S/MIME v3.2 to S/MIME v4.0
 
 This section describes the changes made between S/MIME v3.2 and
-S/MIME v4.0.
+S/MIME v4.0.  Note that the requirement levels indicated by the
+capitalized key words ("MUST", "SHOULD", etc.) may have changed in
+later versions of S/MIME.  Note that the section numbers listed here
+(e.g., 2.1) are from {{?RFC8551}}.
 
 - Added the use of AuthEnvelopedData, including defining and
   registering an smime-type value (Sections 2.4.4 and 3.4).
@@ -491,6 +497,11 @@ S/MIME v4.0.
 
 - Created Appendix B, which discusses considerations for dealing
   with historic email messages.
+
+## Changes from S/MIME v4.0
+
+This section describes the changes made between S/MIME v4.0 and
+S/MIME v5.0.
 
 # CMS Options
 
@@ -818,7 +829,7 @@ recipient, the following steps SHOULD be followed:
 
 ## SignerIdentifier SignerInfo Type
 
-S/MIME v4.0 implementations MUST support both issuerAndSerialNumber
+S/MIME v5.0 implementations MUST support both issuerAndSerialNumber
 and subjectKeyIdentifier.  Messages that use the subjectKeyIdentifier
 choice cannot be read by S/MIME v2 clients.
 
@@ -901,7 +912,7 @@ message.
 
 If the following two conditions are met, the sending agent SHOULD use
 AES-256 GCM, as AES-256 GCM is a stronger algorithm and is required
-by S/MIME v4.0:
+by S/MIME v5.0:
 
 -  The sending agent has no knowledge of the encryption capabilities
    of the recipient.
@@ -1719,7 +1730,7 @@ and so on.
 S/MIME v2 [SMIMEv2] specified a method for "registering" public keys
 with certificate authorities using an application/pkcs10 body part.
 Since that time, the IETF PKIX Working Group has developed other
-methods for requesting certificates.  However, S/MIME v4.0 does not
+methods for requesting certificates.  However, S/MIME v5.0 does not
 require a particular certificate request mechanism.
 
 ## Identifying an S/MIME Message
@@ -1755,7 +1766,7 @@ in order to gain access to certificates for recipients of digital
 envelopes.  This specification does not cover how S/MIME agents
 handle certificates -- only what they do after a certificate has been
 validated or rejected.  S/MIME certificate issues are covered in
-{{RFC5750}}.
+{{!I-D.ietf-lamps-rfc8550bis}}.
 
 At a minimum, for initial S/MIME deployment, a user agent could
 automatically generate a message to an intended recipient requesting
@@ -1850,9 +1861,9 @@ Key sizes for ECDH are fixed by the curve.
 
 This section (1) updates the media type registrations for
 application/pkcs7-mime and application/pkcs7-signature to refer to
-this document as opposed to RFC 5751, (2) adds authEnveloped-data to
+this document as opposed to {{RFC8551}}, (2) adds authEnveloped-data to
 the list of values for smime-type, and (3) updates references from
-RFC 5751 to this document in general.
+{{RFC8551}} to this document in general.
 
 Note that other documents can define additional media types for
 S/MIME.
@@ -1875,7 +1886,7 @@ Security Considerations: See Section 6 of this document
 
 Interoperability Considerations: See Sections 1-6 of this document
 
-Published Specification: RFC 2311, RFC 2633, RFC 5751,
+Published Specification: RFC 2311, RFC 2633, RFC 5751, RFC 8551,
                          and this document
 
 Applications that use this media type: Security applications
@@ -1917,7 +1928,7 @@ Security Considerations: See Section 6 of this document
 
 Interoperability Considerations: See Sections 1-6 of this document
 
-Published Specification: RFC 2311, RFC 2633, RFC 5751,
+Published Specification: RFC 2311, RFC 2633, RFC 5751, RFC 8551,
                          and this document
 
 Applications that use this media type: Security applications
@@ -1950,12 +1961,12 @@ the smime-type Parameter" registry.
 ~~~
    smime-type value: authEnveloped-data
 
-   Reference: RFC 8551, Section 3.2.2
+   Reference: {{I-D.ietf-lamps-rfc8551bis}}, Section 3.2.2
 ~~~
 
 ##  Reference Updates
 
-IANA is to update all references to RFC 5751 to this document.  Known
+IANA is to update all references to RFC 8551 to this document.  Known
 registries to be updated are "CoAP Content-Formats" and "media-
 types".
 
@@ -2412,7 +2423,7 @@ status.
 Many thanks go out to the other authors of the S/MIME version 2
 Message Specification RFC: Steve Dusse, Paul Hoffman, Laurence
 Lundblade, and Lisa Repka.  Without v2, there wouldn't be a v3, v3.1,
-v3.2, or v4.0.
+v3.2, v4.0, or v5.0.
 
 Some of the examples in this document were copied from {{?RFC4134}}.
 Thanks go to the people who wrote and verified the examples in that
