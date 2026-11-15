@@ -338,8 +338,8 @@ Table of Contents
    [SMIMEv3] refers to [RFC2630], [RFC2631], [RFC2632], [RFC2633],
    [RFC2634], and [RFC5035].
 
-   [SMIMEv3.1] refers to [RFC2634], [RFC5035]}, [RFC5652], [RFC5750],
-   and [RFC5751].
+   [SMIMEv3.1] refers to [RFC2634], [RFC5035], [RFC5652], [RFC5750], and
+   [RFC5751].
 
    [SMIMEv3.2] refers to [RFC2634], [RFC3850], [RFC3851], [RFC3852], and
    [RFC5035].
@@ -436,9 +436,9 @@ Table of Contents
    *  Section 2.5.1: Added requirement that receiving agents MUST
       support both GeneralizedTime and UTCTime.
 
-   *  Section 2.5.2: Replaced reference "sha1WithRSAEncryption" with
-      "sha256WithRSAEncryption", replaced "DES-3EDE-CBC" with "AES-128
-      CBC", and deleted the RC5 example.
+   *  Section 2.5.2: Replaced reference sha1WithRSAEncryption with
+      sha256WithRSAEncryption, replaced DES-3EDE-CBC with AES-128 CBC,
+      and deleted the RC5 example.
 
    *  Section 2.5.2.1: Deleted entire section (discussed deprecated
       RC2).
@@ -457,8 +457,7 @@ Table of Contents
    *  Sections 3.2.2 and 3.6: Replaced "encrypted" with "enveloped".
       Updated OID example to use AES-128 CBC OID.
 
-   *  Section 3.4.3.2: Replaced "micalg" parameter for "SHA-1" with
-      "sha-1".
+   *  Section 3.4.3.2: Replaced micalg parameter for SHA-1 with sha-1.
 
    *  Section 4: Updated reference to CERT v3.2.
 
@@ -1045,14 +1044,14 @@ Table of Contents
    further decoded and presented to the user or receiving application.
 
    In order to protect outer, non-content-related message header fields
-   (for instance, the "Subject", "To", "From", and "Cc" fields), the
-   sending client MAY wrap a full MIME message in a message/rfc822
-   wrapper in order to apply S/MIME security services to these header
-   fields.  It is up to the receiving client to decide how to present
-   this "inner" header along with the unprotected "outer" header.  Given
-   the security difference between headers, it is RECOMMENDED that the
-   receiving client provide a distinction between header fields,
-   depending on where they are located.
+   (for instance, the Subject, To, From, and Cc fields), the sending
+   client MAY wrap a full MIME message in a message/rfc822 wrapper in
+   order to apply S/MIME security services to these header fields.  It
+   is up to the receiving client to decide how to present this "inner"
+   header along with the unprotected "outer" header.  Given the security
+   difference between headers, it is RECOMMENDED that the receiving
+   client provide a distinction between header fields, depending on
+   where they are located.
 
    When an S/MIME message is received, if the top-level protected MIME
    entity has a Content-Type of message/rfc822, it can be assumed that
@@ -1233,15 +1232,15 @@ Table of Contents
    know about the contents of the object without forcing the receiving
    agent to decode the ASN.1 for the object.  The Content-Type header
    field of all application/pkcs7-mime objects SHOULD include the
-   optional "smime-type" parameter, as described in the following
+   optional smime-type parameter, as described in the following
    sections.
 
 3.2.1.  The name and filename Parameters
 
    For application/pkcs7-mime, sending agents SHOULD emit the optional
-   "name" parameter to the Content-Type field for compatibility with
-   older systems.  Sending agents SHOULD also emit the optional Content-
-   Disposition field [RFC2183] with the "filename" parameter.  If a
+   name parameter to the Content-Type field for compatibility with older
+   systems.  Sending agents SHOULD also emit the optional Content-
+   Disposition field [RFC2183] with the filename parameter.  If a
    sending agent emits the above parameters, the value of the parameters
    SHOULD be a filename with the appropriate extension:
 
@@ -1278,11 +1277,11 @@ Table of Contents
 
 3.2.2.  The smime-type Parameter
 
-   The application/pkcs7-mime content type defines the optional "smime-
-   type" parameter.  The intent of this parameter is to convey details
+   The application/pkcs7-mime content type defines the optional smime-
+   type parameter.  The intent of this parameter is to convey details
    about the security applied (signed or enveloped) along with
    information about the contained content.  This specification defines
-   the following smime-types.
+   the following smime-type parameters.
 
        Name                   CMS Type              Inner Content
        ----------------------------------------------------------
@@ -1297,22 +1296,21 @@ Table of Contents
    smime-type parameter.
 
    1.  If both signing and encryption can be applied to the content,
-       then three values for smime-type SHOULD be assigned: "signed-_",
-       "authEnv-_", and "enveloped-*".  If one operation can be
-       assigned, then this can be omitted.  Thus, since "certs-only" can
-       only be signed, "signed-" is omitted.
+       then three values for smime-type SHOULD be assigned: signed-*,
+       authEnv-*, and enveloped-*.  If one operation can be assigned,
+       then this can be omitted.  Thus, since certs-only can only be
+       signed, "signed-" is omitted.
 
    2.  A common string for a content OID SHOULD be assigned.  We use
-       "data" for the id-data content OID when MIME is the inner
-       content.
+       data for the id-data content OID when MIME is the inner content.
 
    3.  If no common string is assigned, then the common string of
-       "OID.<oid>" is recommended (for example,
-       "OID.2.16.840.1.101.3.4.1.2" would be AES-128 CBC).
+       OID.\<oid> is recommended (for example,
+       OID.2.16.840.1.101.3.4.1.2 would be AES-128 CBC).
 
    It is explicitly intended that this field be a suitable hint for mail
-   client applications to indicate whether a message is "signed",
-   "authEnveloped", or "enveloped" without having to tunnel into the CMS
+   client applications to indicate whether a message is signed,
+   authEnveloped, or enveloped without having to tunnel into the CMS
    payload.
 
    A registry for additional smime-type parameter values has been
@@ -1344,8 +1342,8 @@ Table of Contents
    Step 4:  The ContentInfo object is inserted into an application/
       pkcs7-mime MIME entity.
 
-   The smime-type parameter for enveloped-only messages is "enveloped-
-   data".  The file extension for this type of message is ".p7m".
+   The smime-type parameter for enveloped-only messages is enveloped-
+   data.  The file extension for this type of message is .p7m.
 
    A sample message would be:
 
@@ -1391,8 +1389,8 @@ Table of Contents
       pkcs7-mime MIME entity.
 
    The smime-type parameter for authenticated enveloped-only messages is
-   "authEnveloped-data".  The file extension for this type of message is
-   ".p7m".
+   authEnveloped-data.  The file extension for this type of message is
+   .p7m.
 
    A sample message would be:
 
@@ -1472,8 +1470,8 @@ Table of Contents
       pkcs7-mime MIME entity.
 
    The smime-type parameter for messages using application/pkcs7-mime
-   with SignedData is "signed-data".  The file extension for this type
-   of message is ".p7m".
+   with SignedData is signed-data.  The file extension for this type of
+   message is .p7m.
 
    A sample message would be:
 
@@ -1506,7 +1504,7 @@ Table of Contents
 
    This format is a clear-signing format.  Recipients without any S/MIME
    or CMS processing facilities are able to view the message.  It makes
-   use of the multipart/signed media type described in [RFC1847].  The
+   use of the multipart/signedmedia type described in [RFC1847].  The
    multipart/signed media type has two parts.  The first part contains
    the MIME entity that is signed; the second part contains the
    "detached signature" CMS SignedData object in which the
@@ -1520,7 +1518,7 @@ Table of Contents
    signatures for the MIME entity.
 
    The file extension for signed-only messages using application/
-   pkcs7-signature is ".p7s".
+   pkcs7-signature is .p7s.
 
 3.5.3.2.  Creating a multipart/signed Message
 
@@ -1573,11 +1571,11 @@ Table of Contents
       See Appendix B for details.
 
    Historical note:  Some early implementations of S/MIME emitted and
-      expected "rsa-md5", "rsa-sha1", and "sha1" for the micalg
-      parameter.)  Receiving agents SHOULD be able to recover gracefully
-      from a micalg parameter value that they do not recognize.  Future
-      values for this parameter will be taken from the IANA "Hash
-      Function Textual Names" registry.
+      expected rsa-md5, rsa-sha1, and sha1 for the micalg parameter.
+      Receiving agents SHOULD be able to recover gracefully from a
+      micalg parameter value that they do not recognize.  Future values
+      for this parameter will be taken from the IANA "Hash Function
+      Textual Names" registry.
 
 3.5.3.3.  Sample multipart/signed Message
 
@@ -1632,8 +1630,8 @@ Table of Contents
    Step 4:  The ContentInfo object is inserted into an application/
       pkcs7-mime MIME entity.
 
-   The smime-type parameter for compressed-only messages is "compressed-
-   data".  The file extension for this type of message is ".p7z".
+   The smime-type parameter for compressed-only messages is compressed-
+   data.  The file extension for this type of message is .p7z.
 
    A sample message would be:
 
@@ -1700,7 +1698,7 @@ Table of Contents
       pkcs7-mime MIME entity.
 
    The smime-type parameter for a certificate management message is
-   "certs-only".  The file extension for this type of message is ".p7c".
+   certs-only.  The file extension for this type of message is .p7c.
 
 3.9.  Registration Requests
 
@@ -1725,8 +1723,8 @@ Table of Contents
    or not a message is an S/MIME message.  A message is considered an S/
    MIME message if it matches any of the criteria listed below.
 
-   The file suffix in the table below comes from the "name" parameter in
-   the Content-Type header field or the "filename" parameter in the
+   The file suffix in the table below comes from the name parameter in
+   the Content-Type header field or the filename parameter in the
    Content-Disposition header field.  The MIME parameters that carry the
    file suffix are not listed below.
 
