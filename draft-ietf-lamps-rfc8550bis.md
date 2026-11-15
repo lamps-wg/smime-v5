@@ -104,7 +104,7 @@ those in RFC 5280.  This document obsoletes RFC 8550.
 # Introduction
 
 S/MIME (Secure/Multipurpose Internet Mail Extensions) v5.0, described
-in {{!I-D.draft-ietf-lamps-rfc8551bis}}, provides a method to send and receive secure MIME
+in {{!I-D.ietf-lamps-rfc8551bis}}, provides a method to send and receive secure MIME
 messages.  Before using a public key to provide security services,
 the S/MIME agent MUST verify that the public key is valid.  S/MIME
 agents MUST use PKIX certificates to validate public keys as
