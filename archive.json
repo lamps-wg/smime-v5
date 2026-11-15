@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-11-01T03:28:22.868622+00:00",
+  "timestamp": "2026-11-15T03:58:36.061202+00:00",
   "repo": "lamps-wg/smime-v5",
   "labels": [
     {
@@ -104,6 +104,38 @@
           "updatedAt": "2026-09-10T08:51:32Z"
         }
       ]
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOSg7Q3M8AAAABfV1UMg",
+      "title": "Italicize all the field names",
+      "url": "https://github.com/lamps-wg/smime-v5/issues/7",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Now that we're not in the '80s we can use formatting so let's italicize all the field names.",
+      "createdAt": "2026-11-15T00:54:48Z",
+      "updatedAt": "2026-11-15T00:54:48Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOSg7Q3M8AAAABfWDBZg",
+      "title": "Pick version",
+      "url": "https://github.com/lamps-wg/smime-v5/issues/9",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on discussions at IETF126, it is pretty clear that we are headed to version 5.",
+      "createdAt": "2026-11-15T01:19:34Z",
+      "updatedAt": "2026-11-15T01:19:34Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -268,6 +300,79 @@
       "mergeCommit": null,
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOSg7Q3M8AAAABPPs51g",
+      "title": "Italicize field names",
+      "url": "https://github.com/lamps-wg/smime-v5/pull/8",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "1st attempt at italicizing all the field names in -rfc8550bis and -rfc8551bis.",
+      "createdAt": "2026-11-15T00:57:09Z",
+      "updatedAt": "2026-11-15T00:58:31Z",
+      "baseRepository": "lamps-wg/smime-v5",
+      "baseRefName": "main",
+      "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
+      "headRepository": "lamps-wg/smime-v5",
+      "headRefName": "seanturner-italicize-field-names",
+      "headRefOid": "7058786b56ad94dda5e6cf032d186cc60b8d4d15",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOSg7Q3M8AAAABPP3lbA",
+      "title": "Pick version",
+      "url": "https://github.com/lamps-wg/smime-v5/pull/10",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on initial discussions at IETF 125, it is pretty clear that the WG wants to work on version 5.\n\nCloses #9.",
+      "createdAt": "2026-11-15T01:21:13Z",
+      "updatedAt": "2026-11-15T01:39:49Z",
+      "baseRepository": "lamps-wg/smime-v5",
+      "baseRefName": "main",
+      "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
+      "headRepository": "lamps-wg/smime-v5",
+      "headRefName": "seanturner-pick-version",
+      "headRefOid": "1e6cd6f1a09cd8866ffee3950283346af4389ca5",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYCsMZg",
+          "commit": {
+            "abbreviatedOid": "cb7e9df"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-11-15T01:24:10Z",
+          "updatedAt": "2026-11-15T01:24:18Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "```suggestion\nin {{!I-D.ietf-lamps-rfc8551bis}}, provides a method to send and receive secure MIME\n```",
+              "createdAt": "2026-11-15T01:24:10Z",
+              "updatedAt": "2026-11-15T01:24:18Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
