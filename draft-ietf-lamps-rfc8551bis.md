@@ -1263,6 +1263,7 @@ the following smime-types.
 Note:
 : EnvelopedData was dropped in S/MIME v5. See {{historic-cons}}
   for details.
+
 In order for consistency to be obtained with future specifications,
 the following guidelines SHOULD be followed when assigning a new
 smime-type parameter.
