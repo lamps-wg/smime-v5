@@ -654,9 +654,9 @@ Table of Contents
    S/MIME receiving agents during certificate and CRL signature
    verification:
 
-           key size <= 2047 : SHOULD NOT (see Appendix A)
-   2048 <= key size <= 4096 : MUST (see Security Considerations)
-   4096 <  key size         : MAY  (see Security Considerations)
+           key size <= 2047 : SHOULD NOT (see {{historic-cons}})
+   2048 <= key size <= 4096 : MUST (see {{sec-cons}})
+   4096 <  key size         : MAY  (see {{sec-cons}})
 
    The signature algorithm OIDs for RSA PKCS #1 v1.5 and RSASSA-PSS with
    SHA-256 using 1024-bit through 3072-bit public keys are specified in
@@ -759,12 +759,12 @@ Table of Contents
    preferred means to convey the email address or addresses that
    correspond to the entity for this certificate.  If the local portion
    of the email address is ASCII, it MUST be encoded using the
-   rfc822Name CHOICE of the GeneralName type as described in [RFC5280],
-   Section 4.2.1.6.  If the local portion of the email address is not
-   ASCII, it MUST be encoded using the otherName CHOICE of the
-   GeneralName type as described in [RFC8398], Section 3.  Since the
-   SubjectAltName type is a SEQUENCE OF GeneralName, multiple email
-   addresses MAY be present.
+   rfc822Name CHOICE of the GeneralName type as described in
+   Section 4.2.1.6 of [RFC5280].  If the local portion of the email
+   address is not ASCII, it MUST be encoded using the otherName CHOICE
+   of the GeneralName type as described in Section 3 of [RFC8398].
+   Since the SubjectAltName type is a SEQUENCE OF GeneralName, multiple
+   email addresses MAY be present.
 
 4.4.4.  Extended Key Usage Extension
 
