@@ -563,7 +563,7 @@ specified in the KeyEncryptionAlgorithmIdentifier {{RFC5652}}.  The
 underlying encryption functions for the key wrap and content-
 encryption algorithms {{RFC3370}} {{!RFC3565}} and the key sizes for the
 two algorithms MUST be the same (e.g., AES-128 key wrap algorithm
-with AES-128 content-encryption algorithm).  As both 128-bit and
+with AES-128 authenticated content-encryption algorithm).  As both 128-bit and
 256-bit AES modes are mandatory to implement as content-encryption
 algorithms (Section 2.7), both the AES-128 and AES-256 key wrap
 algorithms MUST be supported when ECDH ephemeral-static is used.
@@ -576,7 +576,7 @@ versions of S/MIME.
 ## General Syntax
 
 There are several CMS content types.  Of these, only the Data,
-SignedData, EnvelopedData, AuthEnvelopedData, and CompressedData
+SignedData, AuthEnvelopedData, and CompressedData
 content types are currently used for S/MIME.
 
 ### Data Content Type
@@ -589,9 +589,9 @@ identifier (OID), and the media type MUST be stored in the SignedData
 encapContentInfo eContent OCTET STRING (unless the sending agent is
 using multipart/signed, in which case the eContent is absent, per
 Section 3.5.3 of this document).  As another example, when applying
-encryption to MIME data, the CMS EnvelopedData encryptedContentInfo
+encryption to MIME data, the CMS AuthEnvelopedData encryptedContentInfo
 contentType MUST include the id-data OID and the encrypted MIME
-content MUST be stored in the EnvelopedData encryptedContentInfo
+content MUST be stored in the AuthEnvelopedData encryptedContentInfo
 encryptedContent OCTET STRING.
 
 ### SignedData Content Type
@@ -601,13 +601,6 @@ digital signature to a message or, in a degenerate case where there
 is no signature information, to convey certificates.  Applying a
 signature to a message provides authentication, message integrity,
 and non-repudiation of origin.
-
-### EnvelopedData Content Type
-
-This content type is used to apply data confidentiality to a message.
-In order to distribute the symmetric key, a sender needs to have
-access to a public key for each intended message recipient to use
-this service.
 
 ### AuthEnvelopedData Content Type
 
@@ -684,8 +677,7 @@ are encoded in either UTCTime or GeneralizedTime.
 ### SMIMECapabilities Attribute
 
 The SMIMECapabilities attribute includes signature algorithms (such
-as "sha256WithRSAEncryption"), symmetric algorithms (such as "AES-128
-CBC"), authenticated symmetric algorithms (such as "AES-128 GCM"),
+as "sha256WithRSAEncryption"), authenticated symmetric algorithms (such as "AES-128 GCM"),
 and key encipherment algorithms (such as "rsaEncryption").  The
 presence of an SMIMECapability attribute containing an algorithm
 implies that the sender can deal with the algorithm as well as
@@ -796,7 +788,7 @@ Section 2.7.1 explains a strategy for caching preference data.
 #### Selection of Recipient Key Management Certificate
 
 In order to determine the key management certificate to be used when
-sending a future CMS EnvelopedData message for a particular
+sending a future CMS AuthEnvelopedData message for a particular
 recipient, the following steps SHOULD be followed:
 
 -  If an SMIMEEncryptionKeyPreference attribute is found in a
@@ -836,8 +828,6 @@ Sending and receiving agents:
 
 -  MUST support encryption and decryption with AES-128 GCM and
    AES-256 GCM {{!RFC5084}}.
--  MUST- support encryption and decryption with AES-128 CBC
-   {{RFC3565}}.
 -  SHOULD+ support encryption and decryption with ChaCha20-Poly1305
    {{?RFC7905}}.
 
@@ -908,10 +898,6 @@ by S/MIME v4.0:
 -  The sending agent has no knowledge of the version of S/MIME used
    or supported by the recipient.
 
-If the sending agent chooses not to use AES-256 GCM in this step,
-given the presumption is that a client implementing AES-GCM would do
-both AES-256 and AES-128, it SHOULD use AES-128 CBC.
-
 ### Choosing Weak Encryption
 
 Algorithms such as RC2 are considered to be weak encryption
@@ -920,7 +906,7 @@ and are considered to be weaker algorithms than AES.  A sending agent
 that is controlled by a human SHOULD allow a human sender to
 determine the risks of sending data using a weaker encryption
 algorithm before sending the data, and possibly allow the human to
-use a stronger encryption algorithm such as AES GCM or AES CBC even
+use a stronger encryption algorithm such as AES-GCM even
 if there is a possibility that the recipient will not be able to
 process that algorithm.
 
@@ -977,8 +963,8 @@ message/rfc822 media type is explained later in this section.
 The MIME entity that is secured and described in this section can be
 thought of as the "inside" MIME entity.  That is, it is the
 "innermost" object in what is possibly a larger MIME message.
-Processing "outside" MIME entities into CMS EnvelopedData,
-CompressedData, and AuthEnvelopedData content types is described in
+Processing "outside" MIME entities into CMS AuthEnvelopedData and
+CompressedData content types is described in
 Sections 3.2 and 3.5.  Other documents define additional CMS content
 types; those documents should be consulted for processing those CMS
 content types.
@@ -1183,7 +1169,7 @@ HOxEa44b+EI=
 ## The application/pkcs7-mime Media Type
 
 The application/pkcs7-mime media type is used to carry CMS content
-types, including EnvelopedData, SignedData, and CompressedData.  The
+types, including AuthEnvelopedData, SignedData, and CompressedData.  The
 details of constructing these entities are described in subsequent
 sections.  This section describes the general characteristics of the
 application/pkcs7-mime media type.
@@ -1225,13 +1211,16 @@ parameters SHOULD be a filename with the appropriate extension:
                                                              File
 Media Type                                                Extension
 -------------------------------------------------------------------
-application/pkcs7-mime (SignedData, EnvelopedData,           .p7m
+application/pkcs7-mime (SignedData, EnvelopedData*,          .p7m
    AuthEnvelopedData)
 application/pkcs7-mime (degenerate SignedData certificate    .p7c
    management message)
 application/pkcs7-mime (CompressedData)                      .p7z
 application/pkcs7-signature (SignedData)                     .p7s
 ~~~
+Note:
+: EnvelopedData was dropped in S/MIME v5. See {{historic-cons}}
+  for details.
 
 In addition, the filename SHOULD be limited to eight characters
 followed by a three-letter extension.  The eight-character filename
@@ -1265,12 +1254,15 @@ the following smime-types.
 ~~~
     Name                   CMS Type              Inner Content
     ----------------------------------------------------------
-    enveloped-data         EnvelopedData         id-data
+    enveloped-data*        EnvelopedData*        id-data
     signed-data            SignedData            id-data
     certs-only             SignedData            id-data
     compressed-data        CompressedData        id-data
     authEnveloped-data     AuthEnvelopedData     id-data
 ~~~
+Note:
+: EnvelopedData was dropped in S/MIME v5. See {{historic-cons}}
+  for details.
 
 In order for consistency to be obtained with future specifications,
 the following guidelines SHOULD be followed when assigning a new
@@ -1278,7 +1270,7 @@ smime-type parameter.
 
 1.  If both signing and encryption can be applied to the content,
     then three values for smime-type SHOULD be assigned: "signed-*",
-    "authEnv-*", and "enveloped-*".  If one operation can be
+    "authEnveloped-*".  If one operation can be
     assigned, then this can be omitted.  Thus, since "certs-only" can
     only be signed, "signed-" is omitted.
 2.  A common string for a content OID SHOULD be assigned.  We use
@@ -1286,7 +1278,7 @@ smime-type parameter.
     content.
 3.  If no common string is assigned, then the common string of
     "OID.\<oid>" is recommended (for example,
-    "OID.2.16.840.1.101.3.4.1.2" would be AES-128 CBC).
+    "OID.2.16.840.1.101.3.4.1.46" would be AES-256 GCM).
 
 It is explicitly intended that this field be a suitable hint for mail
 client applications to indicate whether a message is "signed",
@@ -1295,54 +1287,6 @@ payload.
 
 A registry for additional smime-type parameter values has been
 defined in {{?RFC7114}}.
-
-## Creating an Enveloped-Only Message
-
-This section describes the format for enveloping a MIME entity
-without signing it.  It is important to note that sending enveloped
-but not signed messages does not provide for data integrity.  The
-"enveloped-only" structure does not support authenticated symmetric
-algorithms.  Use the "authenticated enveloped" structure for these
-algorithms.  Thus, it is possible to replace ciphertext in such a way
-that the processed message will still be valid, but the meaning can
-be altered.
-
-Step 1:
-: The MIME entity to be enveloped is prepared according to Section 3.1.
-
-Step 2:
-: The MIME entity and other required data are processed into a CMS
-object of type EnvelopedData.  In addition to encrypting a copy of
-the content-encryption key (CEK) for each recipient, a copy of the
-CEK SHOULD be encrypted for the originator and included in the
-EnvelopedData (see {{RFC5652}}, Section 6).
-
-Step 3:
-: The EnvelopedData object is wrapped in a CMS ContentInfo object.
-
-Step 4:
-: The ContentInfo object is inserted into an application/pkcs7-mime
-MIME entity.
-
-The smime-type parameter for enveloped-only messages is
-"enveloped-data".  The file extension for this type of message
-is ".p7m".
-
-A sample message would be:
-
-~~~
-Content-Type: application/pkcs7-mime; name=smime.p7m;
-   smime-type=enveloped-data
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename=smime.p7m
-
-MIIBHgYJKoZIhvcNAQcDoIIBDzCCAQsCAQAxgcAwgb0CAQAwJjASMRAwDgYDVQQDEw
-dDYXJsUlNBAhBGNGvHgABWvBHTbi7NXXHQMA0GCSqGSIb3DQEBAQUABIGAC3EN5nGI
-iJi2lsGPcP2iJ97a4e8kbKQz36zg6Z2i0yx6zYC4mZ7mX7FBs3IWg+f6KgCLx3M1eC
-bWx8+MDFbbpXadCDgO8/nUkUNYeNxJtuzubGgzoyEd8Ch4H/dd9gdzTd+taTEgS0ip
-dSJuNnkVY4/M652jKKHRLFf02hosdR8wQwYJKoZIhvcNAQcBMBQGCCqGSIb3DQMHBA
-gtaMXpRwZRNYAgDsiSf8Z9P43LrY4OxUk660cu1lXeCSFOSOpOJ7FuVyU=
-~~~
 
 ## Creating an Authenticated Enveloped-Only Message
 
@@ -2048,14 +1992,6 @@ encrypted message by decrypting the weakly encrypted version.  In
 other words, a sender SHOULD NOT send a copy of a message using
 weaker cryptography than they would use for the original of the
 message.
-
-Modification of the ciphertext in EnvelopedData can go undetected if
-authentication is not also used, which is the case when sending
-EnvelopedData without wrapping it in SignedData or enclosing
-SignedData within it.  This is one of the reasons for moving from
-EnvelopedData to AuthEnvelopedData, as the authenticated encryption
-algorithms provide the authentication without needing the SignedData
-layer.
 
 If an implementation is concerned about compliance with National
 Institute of Standards and Technology (NIST) key size
