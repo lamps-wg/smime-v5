@@ -1180,7 +1180,7 @@ HOxEa44b+EI=
 --bar--
 ~~~
 
-## The application/pkcs7-mime Media Type {#application/pkcs7-mime}
+## The application/pkcs7-mime Media Type {#application-pkcs7-mime}
 
 The application/pkcs7-mime media type is used to carry CMS content
 types, including EnvelopedData, SignedData, and CompressedData.  The
