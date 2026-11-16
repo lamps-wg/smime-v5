@@ -979,7 +979,7 @@ thought of as the "inside" MIME entity.  That is, it is the
 "innermost" object in what is possibly a larger MIME message.
 Processing "outside" MIME entities into CMS EnvelopedData,
 CompressedData, and AuthEnvelopedData content types is described in
-{{application-pkcs7-mime}} and {{#signed-only}}.  Other documents define additional CMS content
+{{application-pkcs7-mime}} and {{signed-only}}.  Other documents define additional CMS content
 types; those documents should be consulted for processing those CMS
 content types.
 
