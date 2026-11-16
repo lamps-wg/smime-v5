@@ -643,7 +643,7 @@ S/MIME message:
 
 -  Signing time ({{sign-time}} in this document)
 -  SMIME capabilities ({{smime-cap}} in this document)
--  Encryption key Preference ({{exp}} in this document)
+-  Encryption key Preference ({{ekp}} in this document)
 -  Message digest ({{Section 11.2 of RFC5652}})
 -  Content type ({{Section 11.1 of RFC5652}})
 
