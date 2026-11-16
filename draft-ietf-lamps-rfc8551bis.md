@@ -570,7 +570,7 @@ algorithms MUST be supported when ECDH ephemeral-static is used.
 Recipients MAY enforce this but MUST use the weaker of the two as
 part of any cryptographic strength computations they might do.
 
-{{{historic-cons}} provides information on algorithm support in older
+{{historic-cons}} provides information on algorithm support in older
 versions of S/MIME.
 
 ## General Syntax
