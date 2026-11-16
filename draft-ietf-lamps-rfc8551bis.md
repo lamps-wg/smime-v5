@@ -332,7 +332,7 @@ The following conventions are used:
 [SMIMEv3.2] refers to {{RFC2634}}, {{?RFC3850}}, {{?RFC3851}}, {{?RFC3852}}, and
 {{RFC5035}}.
 
-[SMIMEv4] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}, {{!RFC8550}}, and
+[SMIMEv4] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}}, {{!RFC8550}}, and
 this document.
 
 ## Compatibility with Prior Practice of S/MIME
