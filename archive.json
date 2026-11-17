@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-11-15T03:58:36.061202+00:00",
+  "timestamp": "2026-11-17T05:50:44.789787+00:00",
   "repo": "lamps-wg/smime-v5",
   "labels": [
     {
@@ -134,6 +134,38 @@
       "body": "Based on discussions at IETF126, it is pretty clear that we are headed to version 5.",
       "createdAt": "2026-11-15T01:19:34Z",
       "updatedAt": "2026-11-15T01:19:34Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 11,
+      "id": "I_kwDOSg7Q3M8AAAABfidnyQ",
+      "title": "Update References",
+      "url": "https://github.com/lamps-wg/smime-v5/issues/11",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Review and update references to RFCs, ASN.1, and FIPS and internal references too.",
+      "createdAt": "2026-11-16T00:18:55Z",
+      "updatedAt": "2026-11-16T00:18:55Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 13,
+      "id": "I_kwDOSg7Q3M8AAAABfi8tTw",
+      "title": "Deprecate EnvelopedData",
+      "url": "https://github.com/lamps-wg/smime-v5/issues/13",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Also need to drop support requirements for AES-CBC. Need new text for backward compatibility.",
+      "createdAt": "2026-11-16T01:04:52Z",
+      "updatedAt": "2026-11-16T01:04:52Z",
       "closedAt": null,
       "comments": []
     }
@@ -373,6 +405,238 @@
           ]
         }
       ]
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOSg7Q3M8AAAABPZ9hhQ",
+      "title": "Update Internal References",
+      "url": "https://github.com/lamps-wg/smime-v5/pull/12",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Addresses part of #11",
+      "createdAt": "2026-11-16T00:20:48Z",
+      "updatedAt": "2026-11-16T00:40:29Z",
+      "baseRepository": "lamps-wg/smime-v5",
+      "baseRefName": "main",
+      "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
+      "headRepository": "lamps-wg/smime-v5",
+      "headRefName": "seanturner-internal-references",
+      "headRefOid": "9353576af5587ead64552cc9bc3afe17dbb9339a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYHxXVA",
+          "commit": {
+            "abbreviatedOid": "d887f0c"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "Extra \"{\".",
+          "createdAt": "2026-11-16T00:22:51Z",
+          "updatedAt": "2026-11-16T00:24:07Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "```suggestion\n{{historic-cons}} provides information on algorithm support in older\n```",
+              "createdAt": "2026-11-16T00:22:51Z",
+              "updatedAt": "2026-11-16T00:24:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYHyirg",
+          "commit": {
+            "abbreviatedOid": "ea71e82"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "Add \"}\".",
+          "createdAt": "2026-11-16T00:27:26Z",
+          "updatedAt": "2026-11-16T00:27:48Z",
+          "comments": [
+            {
+              "originalPosition": 1,
+              "body": "```suggestion\n[SMIMEv4] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}}, {{!RFC8550}}, and\n```",
+              "createdAt": "2026-11-16T00:27:27Z",
+              "updatedAt": "2026-11-16T00:27:48Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYHzP-g",
+          "commit": {
+            "abbreviatedOid": "4ad819b"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "Fix autocorrect :(",
+          "createdAt": "2026-11-16T00:30:07Z",
+          "updatedAt": "2026-11-16T00:30:24Z",
+          "comments": [
+            {
+              "originalPosition": 62,
+              "body": "```suggestion\n-  Encryption key Preference ({{ekp}} in this document)\n```",
+              "createdAt": "2026-11-16T00:30:07Z",
+              "updatedAt": "2026-11-16T00:30:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYHzvpA",
+          "commit": {
+            "abbreviatedOid": "cdc8c5e"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-11-16T00:31:54Z",
+          "updatedAt": "2026-11-16T00:33:11Z",
+          "comments": [
+            {
+              "originalPosition": 181,
+              "body": "```suggestion\n{{application/pkcs7-mime}} and {{signed-only}}.  Other documents define additional CMS content\n```",
+              "createdAt": "2026-11-16T00:31:54Z",
+              "updatedAt": "2026-11-16T00:33:11Z"
+            },
+            {
+              "originalPosition": 211,
+              "body": "```suggestion\n## The application/pkcs7-mime Media Type {#application-pkcs7-mime}\n```",
+              "createdAt": "2026-11-16T00:32:22Z",
+              "updatedAt": "2026-11-16T00:33:11Z"
+            },
+            {
+              "originalPosition": 181,
+              "body": "```suggestion\n{{application-pkcs7-mime}} and {{#signed-only}}.  Other documents define additional CMS content\n```",
+              "createdAt": "2026-11-16T00:32:34Z",
+              "updatedAt": "2026-11-16T00:33:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYH0gyw",
+          "commit": {
+            "abbreviatedOid": "4781853"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-11-16T00:34:53Z",
+          "updatedAt": "2026-11-16T00:34:58Z",
+          "comments": [
+            {
+              "originalPosition": 181,
+              "body": "```suggestion\n{{application-pkcs7-mime}} and {{signed-only}}.  Other documents define additional CMS content\n```",
+              "createdAt": "2026-11-16T00:34:53Z",
+              "updatedAt": "2026-11-16T00:34:58Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "PR_kwDOSg7Q3M8AAAABPaXSGQ",
+      "title": "Deprecate EnvelopedData",
+      "url": "https://github.com/lamps-wg/smime-v5/pull/14",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Removes text for EnvelopedData and AES-CBC.",
+      "createdAt": "2026-11-16T01:06:21Z",
+      "updatedAt": "2026-11-16T21:38:48Z",
+      "baseRepository": "lamps-wg/smime-v5",
+      "baseRefName": "main",
+      "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
+      "headRepository": "lamps-wg/smime-v5",
+      "headRefName": "seanturner-deprecate-EnvelopedData",
+      "headRefOid": "d785d45d43bddf8ed114fcae3c736c2db7a9524c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYH-5dQ",
+          "commit": {
+            "abbreviatedOid": "ed53cf7"
+          },
+          "author": "github-actions",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-11-16T01:06:50Z",
+          "updatedAt": "2026-11-16T01:06:50Z",
+          "comments": [
+            {
+              "originalPosition": 145,
+              "body": "````suggestion\n\n````",
+              "createdAt": "2026-11-16T01:06:50Z",
+              "updatedAt": "2026-11-16T01:06:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYVkPdQ",
+          "commit": {
+            "abbreviatedOid": "27126ef"
+          },
+          "author": "seanturner",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-11-16T21:38:22Z",
+          "updatedAt": "2026-11-16T21:38:40Z",
+          "comments": [
+            {
+              "originalPosition": 145,
+              "body": "```suggestion\n  for details.\n\nIn order for consistency to be obtained with future specifications,\n```",
+              "createdAt": "2026-11-16T21:38:22Z",
+              "updatedAt": "2026-11-16T21:38:40Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "id": "PR_kwDOSg7Q3M8AAAABPacBGA",
+      "title": "Fix mismatched parenthesis",
+      "url": "https://github.com/lamps-wg/smime-v5/pull/15",
+      "state": "OPEN",
+      "author": "seanturner",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-11-16T01:15:00Z",
+      "updatedAt": "2026-11-16T01:15:00Z",
+      "baseRepository": "lamps-wg/smime-v5",
+      "baseRefName": "main",
+      "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
+      "headRepository": "lamps-wg/smime-v5",
+      "headRefName": "seanturner-mismatched-paren",
+      "headRefOid": "d57bad886b351f1f4936a2fa63ad09c90ed2b115",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
