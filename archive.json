@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-11-17T05:50:44.789787+00:00",
+  "timestamp": "2026-11-19T05:12:17.652959+00:00",
   "repo": "lamps-wg/smime-v5",
   "labels": [
     {
@@ -293,7 +293,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-10-29T16:57:44Z",
-      "updatedAt": "2026-10-29T16:57:44Z",
+      "updatedAt": "2026-11-17T06:01:02Z",
       "baseRepository": "lamps-wg/smime-v5",
       "baseRefName": "main",
       "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
@@ -305,7 +305,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYa3Edg",
+          "commit": {
+            "abbreviatedOid": "b57cfdb"
+          },
+          "author": "bcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-11-17T06:01:02Z",
+          "updatedAt": "2026-11-17T06:01:02Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 6,
@@ -319,7 +333,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-10-29T16:58:40Z",
-      "updatedAt": "2026-10-29T16:58:40Z",
+      "updatedAt": "2026-11-17T06:01:35Z",
       "baseRepository": "lamps-wg/smime-v5",
       "baseRefName": "main",
       "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
@@ -331,7 +345,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYa3hMA",
+          "commit": {
+            "abbreviatedOid": "8a0bc3d"
+          },
+          "author": "bcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-11-17T06:01:35Z",
+          "updatedAt": "2026-11-17T06:01:35Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 8,
@@ -345,7 +373,7 @@
       "labels": [],
       "body": "1st attempt at italicizing all the field names in -rfc8550bis and -rfc8551bis.",
       "createdAt": "2026-11-15T00:57:09Z",
-      "updatedAt": "2026-11-15T00:58:31Z",
+      "updatedAt": "2026-11-17T06:05:46Z",
       "baseRepository": "lamps-wg/smime-v5",
       "baseRefName": "main",
       "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
@@ -357,7 +385,28 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYa5QKQ",
+          "commit": {
+            "abbreviatedOid": "7058786"
+          },
+          "author": "bcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-11-17T06:04:45Z",
+          "updatedAt": "2026-11-17T06:05:46Z",
+          "comments": [
+            {
+              "originalPosition": 813,
+              "body": "```suggestion\n: The `SignedData` object is wrapped in a CMS `ContentInfo` object.\n```",
+              "createdAt": "2026-11-17T06:04:45Z",
+              "updatedAt": "2026-11-17T06:05:46Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 10,
@@ -371,7 +420,7 @@
       "labels": [],
       "body": "Based on initial discussions at IETF 125, it is pretty clear that the WG wants to work on version 5.\n\nCloses #9.",
       "createdAt": "2026-11-15T01:21:13Z",
-      "updatedAt": "2026-11-15T01:39:49Z",
+      "updatedAt": "2026-11-17T06:10:51Z",
       "baseRepository": "lamps-wg/smime-v5",
       "baseRefName": "main",
       "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
@@ -403,6 +452,19 @@
               "updatedAt": "2026-11-15T01:24:18Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYa8iDA",
+          "commit": {
+            "abbreviatedOid": "1e6cd6f"
+          },
+          "author": "bcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-11-17T06:10:51Z",
+          "updatedAt": "2026-11-17T06:10:51Z",
+          "comments": []
         }
       ]
     },
@@ -624,7 +686,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-11-16T01:15:00Z",
-      "updatedAt": "2026-11-16T01:15:00Z",
+      "updatedAt": "2026-11-17T06:21:12Z",
       "baseRepository": "lamps-wg/smime-v5",
       "baseRefName": "main",
       "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
@@ -636,7 +698,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOSg7Q3M8AAAABYbB8xA",
+          "commit": {
+            "abbreviatedOid": "d57bad8"
+          },
+          "author": "bcr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-11-17T06:21:12Z",
+          "updatedAt": "2026-11-17T06:21:12Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
