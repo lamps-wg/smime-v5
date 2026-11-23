@@ -1452,7 +1452,7 @@ Step 2:
 object of type `SignedData`.
 
 Step 3:
-: The `SignedDat`a object is wrapped in a CMS `ContentInfo` object.
+: The `SignedData` object is wrapped in a CMS `ContentInfo` object.
 
 Step 4:
 : The `ContentInfo` object is inserted into an `application/pkcs7-mime`
