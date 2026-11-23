@@ -186,13 +186,13 @@ allows extensions for new applications based on content-type.
 This specification defines how to create a MIME body part that has
 been cryptographically enhanced according to the Cryptographic
 Message Syntax (CMS) [CMS], which is derived from PKCS #7 {{?RFC2315}}.
-This specification also defines the application/pkcs7-mime media
+This specification also defines the `application/pkcs7-mime` media
 type, which can be used to transport those body parts.
 
-This document also discusses how to use the multipart/signed media
+This document also discusses how to use the `multipart/signed` media
 type defined in {{!RFC1847}} to transport S/MIME signed messages.
-multipart/signed is used in conjunction with the
-application/pkcs7-signature media type, which is used to transport a
+`multipart/signed` is used in conjunction with the
+`application/pkcs7-signature` media type, which is used to transport a
 detached S/MIME signature.
 
 In order to create S/MIME messages, an S/MIME agent MUST follow the
@@ -240,13 +240,13 @@ DER:
 
 7-bit data:
 : Text data with lines less than 998 characters long, where none of
-  the characters have the 8th bit set, and there are no NULL
+  the characters have the 8th bit set, and there are no `NULL`
   characters.  \<CR> and \<LF> occur only as part of a \<CR>\<LF>
   end-of-line delimiter.
 
 8-bit data:
 : Text data with lines less than 998 characters, and where none of
-  the characters are NULL characters.  \<CR> and \<LF> occur only as
+  the characters are `NULL` characters.  \<CR> and \<LF> occur only as
   part of a \<CR>\<LF> end-of-line delimiter.
 
 Binary data:
@@ -326,13 +326,13 @@ The following conventions are used:
 [SMIMEv3] refers to {{?RFC2630}}, {{?RFC2631}}, {{?RFC2632}}, {{?RFC2633}},
 {{RFC2634}}, and {{RFC5035}}.
 
-[SMIMEv3.1] refers to {{RFC2634}}, {{RFC5035}}}, {{RFC5652}}, {{?RFC5750}}, and
+[SMIMEv3.1] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}}, {{?RFC5750}}, and
 {{RFC5751}}.
 
 [SMIMEv3.2] refers to {{RFC2634}}, {{?RFC3850}}, {{?RFC3851}}, {{?RFC3852}}, and
 {{RFC5035}}.
 
-[SMIMEv4] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}, {{!RFC8550}}, and
+[SMIMEv4] refers to {{RFC2634}}, {{RFC5035}}, {{RFC5652}}, {{!RFC8550}}, and
 this document.
 
 ## Compatibility with Prior Practice of S/MIME
@@ -372,17 +372,17 @@ later versions of S/MIME.
 - The RSA public key algorithm was changed to a MUST implement
   signature algorithm.
 
-- Ambiguous language about the use of "empty" SignedData messages to
+- Ambiguous language about the use of "empty" `SignedData` messages to
   transmit certificates was clarified to reflect that transmission
   of Certificate Revocation Lists is also allowed.
 
 - The use of binary encoding for some MIME entities is now
   explicitly discussed.
 
-- Header protection through the use of the message/rfc822 media type
+- Header protection through the use of the `message/rfc822` media type
   has been added.
 
-- Use of the CompressedData CMS type is allowed, along with required
+- Use of the `CompressedData` CMS type is allowed, along with required
   media type and file extension additions.
 
 ## Changes from S/MIME v3.1 to S/MIME v3.2
@@ -422,11 +422,11 @@ later versions of S/MIME.  Note that the section numbers listed here
   algorithm.
 
 - Section 2.5.1: Added requirement that receiving agents MUST
-  support both GeneralizedTime and UTCTime.
+  support both `GeneralizedTime` and `UTCTime`.
 
-- Section 2.5.2: Replaced reference "sha1WithRSAEncryption" with
-  "sha256WithRSAEncryption", replaced "DES-3EDE-CBC" with "AES-128
-  CBC", and deleted the RC5 example.
+- Section 2.5.2: Replaced reference `sha1WithRSAEncryption` with
+  `sha256WithRSAEncryption`, replaced `DES-3EDE-CBC` with `AES-128
+  CBC`, and deleted the RC5 example.
 
 - Section 2.5.2.1: Deleted entire section (discussed
   deprecated RC2).
@@ -445,8 +445,8 @@ later versions of S/MIME.  Note that the section numbers listed here
 - Sections 3.2.2 and 3.6: Replaced "encrypted" with "enveloped".
   Updated OID example to use AES-128 CBC OID.
 
-- Section 3.4.3.2: Replaced "micalg" parameter for "SHA-1" with
-  "sha-1".
+- Section 3.4.3.2: Replaced `micalg` parameter for `SHA-1` with
+  `sha-1`.
 
 - Section 4: Updated reference to CERT v3.2.
 
@@ -470,13 +470,13 @@ later versions of S/MIME.  Note that the section numbers listed here
 This section describes the changes made between S/MIME v3.2 and
 S/MIME v4.0.
 
-- Added the use of AuthEnvelopedData, including defining and
-  registering an smime-type value (Sections 2.4.4 and 3.4).
+- Added the use of `AuthEnvelopedData`, including defining and
+  registering an `smime-type` value (Sections 2.4.4 and 3.4).
 
 - Updated the content-encryption algorithms (Sections 2.7 and
   2.7.1.2): added AES-256 Galois/Counter Mode (GCM), added
   ChaCha20-Poly1305, removed mention of AES-192 Cipher Block
-  Chaining (CBC), and marked tripleDES as historic.
+  Chaining (CBC), and marked `tripleDES` as historic.
 
 - Updated the set of signature algorithms (Section 2.2): added the
   Edwards-curve Digital Signature Algorithm (EdDSA), added the
@@ -507,7 +507,7 @@ regarding the use of additional attributes.
 The algorithms here are used for digesting the body of the message
 and are not the same as the digest algorithms used as part of the
 signature algorithms.  The result of this is placed in the
-message-digest attribute of the signed attributes.  It is RECOMMENDED
+`message-digest` attribute of the signed attributes.  It is RECOMMENDED
 that the algorithm used for digesting the body of the message be of
 similar strength to, or greater strength than, the signature
 algorithm.
@@ -559,7 +559,7 @@ Receiving and sending agents:
    Encryption Padding (RSAES-OAEP), as specified in {{RFC3560}}.
 
 When ECDH ephemeral-static is used, a key wrap algorithm is also
-specified in the KeyEncryptionAlgorithmIdentifier {{RFC5652}}.  The
+specified in the `KeyEncryptionAlgorithmIdentifier` {{RFC5652}}.  The
 underlying encryption functions for the key wrap and content-
 encryption algorithms {{RFC3370}} {{!RFC3565}} and the key sizes for the
 two algorithms MUST be the same (e.g., AES-128 key wrap algorithm
@@ -575,41 +575,41 @@ versions of S/MIME.
 
 ## General Syntax
 
-There are several CMS content types.  Of these, only the Data,
-SignedData, EnvelopedData, AuthEnvelopedData, and CompressedData
+There are several CMS content types.  Of these, only the `Data`,
+`SignedData`, `EnvelopedData`, `AuthEnvelopedData`, and `CompressedData`
 content types are currently used for S/MIME.
 
-### Data Content Type
+### `Data` Content Type
 
-Sending agents MUST use the id-data content type identifier to
+Sending agents MUST use the `id-data` content type identifier to
 identify the "inner" MIME message content.  For example, when
-applying a digital signature to MIME data, the CMS SignedData
-encapContentInfo eContentType MUST include the id-data object
-identifier (OID), and the media type MUST be stored in the SignedData
-encapContentInfo eContent OCTET STRING (unless the sending agent is
-using multipart/signed, in which case the eContent is absent, per
+applying a digital signature to MIME data, the CMS
+`SignedData encapContentInfo eContentType` MUST include the `id-data` object
+identifier (OID), and the media type MUST be stored in the `SignedData`
+`encapContentInfo` `eContent` `OCTET STRING` (unless the sending agent is
+using `multipart/signed`, in which case the `eContent` is absent, per
 Section 3.5.3 of this document).  As another example, when applying
-encryption to MIME data, the CMS EnvelopedData encryptedContentInfo
-contentType MUST include the id-data OID and the encrypted MIME
-content MUST be stored in the EnvelopedData encryptedContentInfo
-encryptedContent OCTET STRING.
+encryption to MIME data, the CMS `EnvelopedData` `encryptedContentInfo`
+`contentType` MUST include the `id-data` OID and the encrypted MIME
+content MUST be stored in the `EnvelopedData` `encryptedContentInfo`
+`encryptedContent` `OCTET STRING`.
 
-### SignedData Content Type
+### `SignedData` Content Type
 
-Sending agents MUST use the SignedData content type to apply a
+Sending agents MUST use the `SignedData` content type to apply a
 digital signature to a message or, in a degenerate case where there
-is no signature information, to convey certificates.  Applying a
-signature to a message provides authentication, message integrity,
+is no `signature` information, to convey `certificates`.  Applying a
+`signature` to a message provides authentication, message integrity,
 and non-repudiation of origin.
 
-### EnvelopedData Content Type
+### `EnvelopedData` Content Type
 
 This content type is used to apply data confidentiality to a message.
 In order to distribute the symmetric key, a sender needs to have
 access to a public key for each intended message recipient to use
 this service.
 
-### AuthEnvelopedData Content Type
+### `AuthEnvelopedData` Content Type
 
 This content type is used to apply data confidentiality and message
 integrity to a message.  This content type does not provide
@@ -617,7 +617,7 @@ authentication or non-repudiation.  In order to distribute the
 symmetric key, a sender needs to have access to a public key for each
 intended message recipient to use this service.
 
-### CompressedData Content Type
+### `CompressedData` Content Type
 
 This content type is used to apply data compression to a message.
 This content type does not provide authentication, message integrity,
@@ -627,14 +627,14 @@ the message's size.
 See Section 3.7 for further guidance on the use of this type in
 conjunction with other CMS types.
 
-## Attributes and the SignerInfo Type {#attrs-and-si}
+## Attributes and the `SignerInfo` Type {#attrs-and-si}
 
-The SignerInfo type allows the inclusion of unsigned and signed
-attributes along with a signature.  These attributes can be required
+The `SignerInfo` type allows the inclusion of unsigned and signed
+attributes along with a `signature`.  These attributes can be required
 for the processing of messages (e.g., message digest), information
 the signer supplied (e.g., SMIME capabilities) that should be
 processed, or attributes that are not relevant to the current
-situation (e.g., mlExpansionHistory {{RFC2634}} for mail viewers).
+situation (e.g., `mlExpansionHistory` {{RFC2634}} for mail viewers).
 
 Receiving agents MUST be able to handle zero or one instance of each
 of the listed here.  Sending agents SHOULD generate
@@ -648,12 +648,12 @@ S/MIME message:
 -  Content type (Section 11.1 in {{RFC5652}})
 
 Further, receiving agents SHOULD be able to handle zero or one
-instance of the signingCertificate and signingCertificateV2 signed
+instance of the `signingCertificate` and `signingCertificateV2` signed
 attributes, as defined in Section 5 of RFC 2634 [ESS] and Section 3
 of RFC 5035 [ESS], respectively.
 
-Sending agents SHOULD generate one instance of the signingCertificate
-or signingCertificateV2 signed attribute in each SignerInfo
+Sending agents SHOULD generate one instance of the `signingCertificate`
+or `signingCertificateV2` signed attribute in each `SignerInfo`
 structure.
 
 Additional attributes and values for these attributes might be
@@ -666,63 +666,63 @@ the user is aware of all of the data being signed.
 
 ### Signing Time Attribute
 
-The signingTime attribute is used to convey the time that a message
+The `signingTime` attribute is used to convey the time that a message
 was signed.  The time of signing will most likely be created by a
 signer and therefore is only as trustworthy as that signer.
 
 Sending agents MUST encode signing time through the year 2049 as
-UTCTime; signing times in 2050 or later MUST be encoded as
-GeneralizedTime.  When the UTCTime CHOICE is used, S/MIME agents MUST
+`UTCTime`; signing times in 2050 or later MUST be encoded as
+`GeneralizedTime`.  When the `UTCTime` CHOICE is used, S/MIME agents MUST
 interpret the year field (YY) as follows:
 
 > If YY is greater than or equal to 50, the year is interpreted as
   19YY; if YY is less than 50, the year is interpreted as 20YY.
 
-Receiving agents MUST be able to process signingTime attributes that
-are encoded in either UTCTime or GeneralizedTime.
+Receiving agents MUST be able to process `signingTime` attributes that
+are encoded in either `UTCTime` or `GeneralizedTime`.
 
 ### SMIMECapabilities Attribute
 
-The SMIMECapabilities attribute includes signature algorithms (such
+The `SMIMECapabilities` attribute includes signature algorithms (such
 as "sha256WithRSAEncryption"), symmetric algorithms (such as "AES-128
 CBC"), authenticated symmetric algorithms (such as "AES-128 GCM"),
 and key encipherment algorithms (such as "rsaEncryption").  The
-presence of an SMIMECapability attribute containing an algorithm
+presence of an `SMIMECapability` attribute containing an algorithm
 implies that the sender can deal with the algorithm as well as
 understand the ASN.1 structures associated with that algorithm.
 There are also several identifiers that indicate support for other
 optional features such as binary encoding and compression.  The
-SMIMECapabilities attribute was designed to be flexible and
+`SMIMECapabilities` attribute was designed to be flexible and
 extensible so that, in the future, a means of identifying other
 capabilities and preferences such as certificates can be added in a
 way that will not cause current clients to break.
 
-If present, the SMIMECapabilities attribute MUST be a
-SignedAttribute.  CMS defines SignedAttributes as a SET OF Attribute.
-The SignedAttributes in a signerInfo MUST include a single instance
-of the SMIMECapabilities attribute.  CMS defines the ASN.1 syntax for
-Attribute to include attrValues SET OF AttributeValue.  An
-SMIMECapabilities attribute MUST only include a single instance of
-AttributeValue.  If a signature is detected as violating these
-requirements, the signature SHOULD be treated as failing.
+If present, the `SMIMECapabilities` attribute MUST be a
+`SignedAttribute`.  CMS defines `SignedAttributes` as a `SET OF Attribute`.
+The `SignedAttributes` in a `signerInfo` MUST include a single instance
+of the `SMIMECapabilities` attribute.  CMS defines the ASN.1 syntax for
+`Attribute` to include `attrValues SET OF AttributeValue`.  An
+`SMIMECapabilities` attribute MUST only include a single instance of
+`AttributeValue`.  If a `signature` is detected as violating these
+requirements, the `signature` SHOULD be treated as failing.
 
-The semantics of the SMIMECapabilities attribute specify a partial
-list as to what the client announcing the SMIMECapabilities can
+The semantics of the `SMIMECapabilities` attribute specify a partial
+list as to what the client announcing the `SMIMECapabilities` can
 support.  A client does not have to list every capability it
 supports, and it need not list all its capabilities so that the
-capabilities list doesn't get too long.  In an SMIMECapabilities
+capabilities list doesn't get too long.  In an `SMIMECapabilities`
 attribute, the OIDs are listed in order of their preference but
 SHOULD be separated logically along the lines of their categories
 (signature algorithms, symmetric algorithms, key encipherment
 algorithms, etc.).
 
-The structure of the SMIMECapabilities attribute is to facilitate
+The structure of the `SMIMECapabilities` attribute is to facilitate
 simple table lookups and binary comparisons in order to determine
-matches.  For instance, the encoding for the SMIMECapability for
-sha256WithRSAEncryption includes rather than omits the NULL
+matches.  For instance, the encoding for the `SMIMECapability` for
+`sha256WithRSAEncryption` includes rather than omits the `NULL`
 parameter.  Because of the requirement for identical encoding,
 individuals documenting algorithms to be used in the
-SMIMECapabilities attribute SHOULD explicitly document the correct
+`SMIMECapabilities` attribute SHOULD explicitly document the correct
 byte sequence for the common cases.
 
 For any capability, the associated parameters for the OID MUST
@@ -730,26 +730,26 @@ specify all of the parameters necessary to differentiate between two
 instances of the same algorithm.
 
 The same OID that is used to identify an algorithm SHOULD also be
-used in the SMIMECapability for that algorithm.  There are cases
+used in the `SMIMECapability` for that algorithm.  There are cases
 where a single OID can correspond to multiple algorithms.  In these
-cases, a single algorithm MUST be assigned to the SMIMECapability
-using that OID.  Additional OIDs from the smimeCapabilities OID tree
+cases, a single algorithm MUST be assigned to the `SMIMECapability`
+using that OID.  Additional OIDs from the `smimeCapabilities` OID tree
 are then allocated for the other algorithms usages.  For instance, in
-an earlier specification, rsaEncryption was ambiguous because it
+an earlier specification, `rsaEncryption` was ambiguous because it
 could refer to either a signature algorithm or a key encipherment
 algorithm.  In the event that an OID is ambiguous, it needs to be
-arbitrated by the maintainer of the registered SMIMECapabilities list
+arbitrated by the maintainer of the registered `SMIMECapabilities` list
 as to which type of algorithm will use the OID, and a new OID MUST be
-allocated under the smimeCapabilities OID to satisfy the other use of
+allocated under the `smimeCapabilities` OID to satisfy the other use of
 the OID.
 
-The registered SMIMECapabilities list specifies the parameters for
+The registered `SMIMECapabilities` list specifies the parameters for
 OIDs that need them, most notably key lengths in the case of
 variable-length symmetric ciphers.  In the event that there are no
 differentiating parameters for a particular OID, the parameters MUST
-be omitted and MUST NOT be encoded as NULL.  Additional values for
-the SMIMECapabilities attribute might be defined in the future.
-Receiving agents MUST handle an SMIMECapabilities object that has
+be omitted and MUST NOT be encoded as `NULL`.  Additional values for
+the `SMIMECapabilities` attribute might be defined in the future.
+Receiving agents MUST handle an `SMIMECapabilities` object that has
 values that it does not recognize in a graceful manner.
 
 Section 2.7.1 explains a strategy for caching capabilities.
@@ -765,14 +765,14 @@ convey to anyone viewing the attribute which of the listed
 certificates is appropriate for encrypting a session key for future
 encrypted messages.
 
-If present, the SMIMEEncryptionKeyPreference attribute MUST be a
-SignedAttribute.  CMS defines SignedAttributes as a SET OF Attribute.
-The SignedAttributes in a signerInfo MUST include a single instance
-of the SMIMEEncryptionKeyPreference attribute.  CMS defines the ASN.1
-syntax for Attribute to include attrValues SET OF AttributeValue.  An
-SMIMEEncryptionKeyPreference attribute MUST only include a single
-instance of AttributeValue.  If a signature is detected as violating
-these requirements, the signature SHOULD be treated as failing.
+If present, the `SMIMEEncryptionKeyPreference` attribute MUST be a
+`SignedAttribute`.  CMS defines `SignedAttributes` as a `SET OF Attribute`.
+The `SignedAttributes` in a `signerInfo` MUST include a single instance
+of the `SMIMEEncryptionKeyPreference` attribute.  CMS defines the ASN.1
+syntax for `Attribute` to include `attrValues SET OF AttributeValue`.  An
+`SMIMEEncryptionKeyPreference` attribute MUST only include a single
+instance of `AttributeValue`.  If a `signature` is detected as violating
+these requirements, the `signature` SHOULD be treated as failing.
 
 The sending agent SHOULD include the referenced certificate in the
 set of certificates included in the signed message if this attribute
@@ -782,9 +782,9 @@ this attribute if the commonly used or preferred encryption
 certificate is not the same as the certificate used to sign the
 message.
 
-Receiving agents SHOULD store the preference data if the signature on
+Receiving agents SHOULD store the preference data if the `signature` on
 the message is valid and the signing time is greater than the
-currently stored value.  (As with the SMIMECapabilities, the clock
+currently stored value.  (As with the `SMIMECapabilities`, the clock
 skew SHOULD be checked and the data not used if the skew is too
 great.)  Receiving agents SHOULD respect the sender's encryption key
 preference attribute if possible.  This, however, represents only a
@@ -796,16 +796,16 @@ Section 2.7.1 explains a strategy for caching preference data.
 #### Selection of Recipient Key Management Certificate
 
 In order to determine the key management certificate to be used when
-sending a future CMS EnvelopedData message for a particular
+sending a future CMS `EnvelopedData` message for a particular
 recipient, the following steps SHOULD be followed:
 
--  If an SMIMEEncryptionKeyPreference attribute is found in a
-   SignedData object received from the desired recipient, this
+-  If an `SMIMEEncryptionKeyPreference` attribute is found in a
+   `SignedData` object received from the desired recipient, this
    identifies the X.509 certificate that SHOULD be used as the X.509
    key management certificate for the recipient.
 
--  If an SMIMEEncryptionKeyPreference attribute is not found in a
-   SignedData object received from the desired recipient, the set of
+-  If an `SMIMEEncryptionKeyPreference` attribute is not found in a
+   `SignedData` object received from the desired recipient, the set of
    X.509 certificates SHOULD be searched for an X.509 certificate
    with the same subject name as the signer of an X.509 certificate
    that can be used for key management.
@@ -816,21 +816,21 @@ recipient, the following steps SHOULD be followed:
    multiple X.509 key management certificates are found, the S/MIME
    agent can make an arbitrary choice between them.
 
-## SignerIdentifier SignerInfo Type
+## `SignerIdentifier SignerInfo` Type
 
-S/MIME v4.0 implementations MUST support both issuerAndSerialNumber
-and subjectKeyIdentifier.  Messages that use the subjectKeyIdentifier
+S/MIME v4.0 implementations MUST support both `issuerAndSerialNumber`
+and `subjectKeyIdentifier`.  Messages that use the `subjectKeyIdentifier`
 choice cannot be read by S/MIME v2 clients.
 
 It is important to understand that some certificates use a value for
-subjectKeyIdentifier that is not suitable for uniquely identifying a
+`subjectKeyIdentifier` that is not suitable for uniquely identifying a
 certificate.  Implementations MUST be prepared for multiple
 certificates for potentially different entities to have the same
-value for subjectKeyIdentifier and MUST be prepared to try each
+value for `subjectKeyIdentifier` and MUST be prepared to try each
 matching certificate during signature verification before indicating
 an error condition.
 
-## ContentEncryptionAlgorithmIdentifier
+## `ContentEncryptionAlgorithmIdentifier`
 
 Sending and receiving agents:
 
@@ -947,7 +947,7 @@ produce a CMS object.  Finally, the CMS object is wrapped in MIME.
 The "Enhanced Security Services for S/MIME" documents [ESS] provide
 descriptions of how nested, secured S/MIME messages are formatted.
 ESS provides a description of how a triple-wrapped S/MIME message is
-formatted using multipart/signed and application/pkcs7-mime for the
+formatted using `multipart/signed` and `application/pkcs7-mime` for the
 signatures.
 
 S/MIME provides one format for enveloped-only data, several formats
@@ -972,13 +972,13 @@ only the MIME message headers and MIME body and does not include the
 rfc822 header.  Note that S/MIME can also be used to secure MIME
 entities used in applications other than Internet mail.  For cases
 where protection of the rfc822 header is required, the use of the
-message/rfc822 media type is explained later in this section.
+`message/rfc822` media type is explained later in this section.
 
 The MIME entity that is secured and described in this section can be
 thought of as the "inside" MIME entity.  That is, it is the
 "innermost" object in what is possibly a larger MIME message.
-Processing "outside" MIME entities into CMS EnvelopedData,
-CompressedData, and AuthEnvelopedData content types is described in
+Processing "outside" MIME entities into CMS `EnvelopedData`,
+`CompressedData`, and `AuthEnvelopedData` content types is described in
 Sections 3.2 and 3.5.  Other documents define additional CMS content
 types; those documents should be consulted for processing those CMS
 content types.
@@ -994,7 +994,7 @@ A single procedure is used for creating MIME entities that are to
 have any combination of signing, enveloping, and compressing applied.
 Some additional steps are recommended to defend against known
 corruptions that can occur during mail transport that are of
-particular importance for clear-signing using the multipart/signed
+particular importance for clear-signing using the `multipart/signed`
 format.  It is recommended that these additional steps be performed
 on enveloped messages, or signed and enveloped messages, so that the
 messages can be forwarded to any environment without modification.
@@ -1019,8 +1019,8 @@ entity is typically passed to a MIME-capable user agent where it is
 further decoded and presented to the user or receiving application.
 
 In order to protect outer, non-content-related message header fields
-(for instance, the "Subject", "To", "From", and "Cc" fields), the
-sending client MAY wrap a full MIME message in a message/rfc822
+(for instance, the `Subject`, `To`, `From`, and `Cc` fields), the
+sending client MAY wrap a full MIME message in a `message/rfc822`
 wrapper in order to apply S/MIME security services to these header
 fields.  It is up to the receiving client to decide how to present
 this "inner" header along with the unprotected "outer" header.  Given
@@ -1029,7 +1029,7 @@ receiving client provide a distinction between header fields,
 depending on where they are located.
 
 When an S/MIME message is received, if the top-level protected MIME
-entity has a Content-Type of message/rfc822, it can be assumed that
+entity has a `Content-Type` of `message/rfc822`, it can be assumed that
 the intent was to provide header protection.  This entity SHOULD be
 presented as the top-level message, taking into account
 header-merging issues as previously discussed.
@@ -1038,15 +1038,15 @@ header-merging issues as previously discussed.
 
 Each MIME entity MUST be converted to a canonical form that is
 uniquely and unambiguously representable in the environment where the
-signature is created and the environment where the signature will be
+`signature` is created and the environment where the `signature` will be
 verified.  MIME entities MUST be canonicalized for enveloping and
 compressing as well as signing.
 
 The exact details of canonicalization depend on the actual media type
 and subtype of an entity and are not described here.  Instead, the
 standard for the particular media type SHOULD be consulted.  For
-example, canonicalization of type text/plain is different from
-canonicalization of audio/basic.  Other than text types, most types
+example, canonicalization of type `text/plain` is different from
+canonicalization of `audio/basic`.  Other than text types, most types
 have only one representation, regardless of computing platform or
 environment, that can be considered their canonical representation.
 
@@ -1069,10 +1069,10 @@ MUST be used.
 ### Transfer Encoding
 
 When generating any of the secured MIME entities below, except the
-signing using the multipart/signed format, no transfer encoding is
+signing using the `multipart/signed` format, no transfer encoding is
 required at all.  S/MIME implementations MUST be able to deal with
-binary MIME objects.  If no Content-Transfer-Encoding header field is
-present, the transfer encoding is presumed to be 7BIT.
+binary MIME objects.  If no `Content-Transfer-Encoding` header field is
+present, the transfer encoding is presumed to be `7BIT`.
 
 As a rule, S/MIME implementations SHOULD use transfer encoding as
 described in Section 3.1.3 for all MIME entities they secure.  The
@@ -1095,7 +1095,7 @@ entities.  The use of a 7-bit-safe encoding (such as base64)
 unnecessarily expands the message size.  Implementations MAY
 determine that recipient implementations are capable of
 handling inner binary MIME entities by (1) interpreting the
-id-cap-preferBinaryInside SMIMECapabilities attribute, (2) prior
+`id-cap-preferBinaryInside` `SMIMECapabilities` attribute, (2) prior
 agreement, or (3) other means.
 
 If one or more intended recipients are unable to handle inner binary
@@ -1103,14 +1103,14 @@ MIME objects or if this capability is unknown for any of the intended
 recipients, S/MIME implementations SHOULD use transfer encoding as
 described in Section 3.1.3 for all MIME entities they secure.
 
-###  Transfer Encoding for Signing Using multipart/signed
+###  Transfer Encoding for Signing Using `multipart/signed`
 
-If a multipart/signed entity is ever to be transmitted over the
+If a `multipart/signed` entity is ever to be transmitted over the
 standard Internet SMTP infrastructure or other transport that is
 constrained to 7-bit text, it MUST have transfer encoding applied so
 that it is represented as 7-bit text.  MIME entities that are already
 7-bit data need no transfer encoding.  Entities such as 8-bit text
-and binary data can be encoded with quoted-printable or base64
+and binary data can be encoded with `quoted-printable` or `base64`
 transfer encoding.
 
 The primary reason for the 7-bit requirement is that the Internet
@@ -1130,14 +1130,14 @@ options, none of which are acceptable for a clear-signed message:
 -  The agent could return the message to the sender.
 
 {{RFC1847}} prohibits an agent from changing the transfer encoding of
-the first part of a multipart/signed message.  If a compliant agent
+the first part of a `multipart/signed` message.  If a compliant agent
 that cannot transmit 8-bit or binary data encountered a
-multipart/signed message with 8-bit or binary data in the first part,
+`multipart/signed` message with 8-bit or binary data in the first part,
 it would have to return the message to the sender as undeliverable.
 
 ###  Sample Canonical MIME Entity
 
-This example shows a multipart/mixed message with full transfer
+This example shows a `multipart/mixed` message with full transfer
 encoding.  This message contains a text part and an attachment.  The
 sample message text includes characters that are not ASCII and thus
 need to be transfer encoded.  Though not shown here, the end of each
@@ -1180,20 +1180,20 @@ HOxEa44b+EI=
 --bar--
 ~~~
 
-## The application/pkcs7-mime Media Type
+## The `application/pkcs7-mime` Media Type
 
-The application/pkcs7-mime media type is used to carry CMS content
-types, including EnvelopedData, SignedData, and CompressedData.  The
+The `application/pkcs7-mime` media type is used to carry CMS content
+types, including `EnvelopedData`, `SignedData`, and `CompressedData`.  The
 details of constructing these entities are described in subsequent
 sections.  This section describes the general characteristics of the
-application/pkcs7-mime media type.
+`application/pkcs7-mime` media type.
 
 The carried CMS object always contains a MIME entity that is prepared
-as described in Section 3.1 if the eContentType is id-data.  Other
-contents MAY be carried when the eContentType contains different
+as described in Section 3.1 if the `eContentType` is `id-data`.  Other
+contents MAY be carried when the `eContentType` contains different
 values.  See [ESS] for an example of this with signed receipts.
 
-Since CMS content types are binary data, in most cases base64
+Since CMS content types are binary data, in most cases `base64`
 transfer encoding is appropriate -- in particular, when used with
 SMTP transport.  The transfer encoding used depends on the transport
 through which the object is to be sent and is not a characteristic of
@@ -1204,20 +1204,20 @@ object or "outside" MIME entity.  It is completely distinct from, and
 unrelated to, the transfer encoding of the MIME entity secured by the
 CMS object -- the "inside" object, which is described in Section 3.1.
 
-Because there are several types of application/pkcs7-mime objects, a
+Because there are several types of `application/pkcs7-mime` objects, a
 sending agent SHOULD do as much as possible to help a receiving agent
 know about the contents of the object without forcing the receiving
-agent to decode the ASN.1 for the object.  The Content-Type header
-field of all application/pkcs7-mime objects SHOULD include the
-optional "smime-type" parameter, as described in the following
+agent to decode the ASN.1 for the object.  The `Content-Type` header
+field of all `application/pkcs7-mime` objects SHOULD include the
+optional `smime-type` parameter, as described in the following
 sections.
 
-### The name and filename Parameters
+### The `name` and `filename` Parameters
 
-For application/pkcs7-mime, sending agents SHOULD emit the
-optional "name" parameter to the Content-Type field for compatibility
+For `application/pkcs7-mime`, sending agents SHOULD emit the
+optional `name` parameter to the `Content-Type` field for compatibility
 with older systems.  Sending agents SHOULD also emit the optional
-Content-Disposition field {{!RFC2183}} with the "filename" parameter.
+`Content-Disposition` field {{!RFC2183}} with the `filename` parameter.
 If a sending agent emits the above parameters, the value of the
 parameters SHOULD be a filename with the appropriate extension:
 
@@ -1242,9 +1242,9 @@ S/MIME.
 Including a filename serves two purposes.  It facilitates easier use
 of S/MIME objects as files on disk.  It also can convey type
 information across gateways.  When a MIME entity of type
-application/pkcs7-mime (for example) arrives at a gateway that has no
+`application/pkcs7-mime` (for example) arrives at a gateway that has no
 special knowledge of S/MIME, it will default the entity's media type
-to application/octet-stream and treat it as a generic attachment,
+to `application/octet-stream` and treat it as a generic attachment,
 thus losing the type information.  However, the suggested filename
 for an attachment is often carried across a gateway.  This often
 allows the receiving systems to determine the appropriate application
@@ -1254,13 +1254,13 @@ convenience for implementations in certain environments.  A proper
 S/MIME implementation MUST use the media types and MUST NOT rely on
 the file extensions.
 
-### The smime-type Parameter
+### The `smime-type` Parameter
 
-The application/pkcs7-mime content type defines the optional
-"smime-type" parameter.  The intent of this parameter is to convey
+The `application/pkcs7-mime` content type defines the optional
+`smime-type` parameter.  The intent of this parameter is to convey
 details about the security applied (signed or enveloped) along with
 information about the contained content.  This specification defines
-the following smime-types.
+the following `smime-type` parameters.
 
 ~~~
     Name                   CMS Type              Inner Content
@@ -1274,26 +1274,26 @@ the following smime-types.
 
 In order for consistency to be obtained with future specifications,
 the following guidelines SHOULD be followed when assigning a new
-smime-type parameter.
+`smime-type` parameter.
 
 1.  If both signing and encryption can be applied to the content,
-    then three values for smime-type SHOULD be assigned: "signed-*",
-    "authEnv-*", and "enveloped-*".  If one operation can be
-    assigned, then this can be omitted.  Thus, since "certs-only" can
+    then three values for `smime-type` SHOULD be assigned: `signed-*`,
+    `authEnv-*`, and `enveloped-*`.  If one operation can be
+    assigned, then this can be omitted.  Thus, since `certs-only` can
     only be signed, "signed-" is omitted.
 2.  A common string for a content OID SHOULD be assigned.  We use
-    "data" for the id-data content OID when MIME is the inner
+    `data` for the `id-data` content OID when MIME is the inner
     content.
 3.  If no common string is assigned, then the common string of
-    "OID.\<oid>" is recommended (for example,
-    "OID.2.16.840.1.101.3.4.1.2" would be AES-128 CBC).
+    `OID.\<oid>` is recommended (for example,
+    `OID.2.16.840.1.101.3.4.1.2` would be AES-128 CBC).
 
 It is explicitly intended that this field be a suitable hint for mail
-client applications to indicate whether a message is "signed",
-"authEnveloped", or "enveloped" without having to tunnel into the CMS
+client applications to indicate whether a message is `signed`,
+`authEnveloped`, or `enveloped` without having to tunnel into the CMS
 payload.
 
-A registry for additional smime-type parameter values has been
+A registry for additional `smime-type` parameter values has been
 defined in {{?RFC7114}}.
 
 ## Creating an Enveloped-Only Message
@@ -1312,21 +1312,21 @@ Step 1:
 
 Step 2:
 : The MIME entity and other required data are processed into a CMS
-object of type EnvelopedData.  In addition to encrypting a copy of
+object of type `EnvelopedData`.  In addition to encrypting a copy of
 the content-encryption key (CEK) for each recipient, a copy of the
 CEK SHOULD be encrypted for the originator and included in the
-EnvelopedData (see {{RFC5652}}, Section 6).
+`EnvelopedData` (see {{RFC5652}}, Section 6).
 
 Step 3:
-: The EnvelopedData object is wrapped in a CMS ContentInfo object.
+: The `EnvelopedData` object is wrapped in a CMS `ContentInfo` object.
 
 Step 4:
-: The ContentInfo object is inserted into an application/pkcs7-mime
+: The `ContentInfo` object is inserted into an `application/pkcs7-mime`
 MIME entity.
 
-The smime-type parameter for enveloped-only messages is
-"enveloped-data".  The file extension for this type of message
-is ".p7m".
+The `smime-type` parameter for enveloped-only messages is
+`enveloped-data`.  The file extension for this type of message
+is `.p7m`.
 
 A sample message would be:
 
@@ -1363,19 +1363,19 @@ Step 1:
 
 Step 2:
 : The MIME entity and other required data are processed into a CMS
-object of type AuthEnvelopedData.  In addition to encrypting a copy
+object of type `AuthEnvelopedData`.  In addition to encrypting a copy
 of the CEK for each recipient, a copy of the CEK SHOULD be encrypted
-for the originator and included in the AuthEnvelopedData (see {{RFC5083}}).
+for the originator and included in the `AuthEnvelopedData` (see {{RFC5083}}).
 
 Step 3:
-: The AuthEnvelopedData object is wrapped in a CMS ContentInfo object.
+: The `AuthEnvelopedData` object is wrapped in a CMS `ContentInfo` object.
 
 Step 4:
-: The ContentInfo object is inserted into an application/pkcs7-mime MIME entity.
+: The `ContentInfo` object is inserted into an `application/pkcs7-mime` MIME entity.
 
-The smime-type parameter for authenticated enveloped-only messages is
-"authEnveloped-data".  The file extension for this type of message
-is ".p7m".
+The `smime-type` parameter for authenticated enveloped-only messages is
+`authEnveloped-data`.  The file extension for this type of message
+is `.p7m`.
 
 A sample message would be:
 
@@ -1411,10 +1411,10 @@ IW4D+GS7oMMoKj8ZNyCJJsyf5smRZ+WxeBoolb3+TiGcBBCsRnfe6noLZiFO
 
 There are two formats for signed messages defined for S/MIME:
 
-   -  application/pkcs7-mime with SignedData.
-   -  multipart/signed.
+   -  `application/pkcs7-mime` with `SignedData`.
+   -  `multipart/signed`.
 
-In general, the multipart/signed form is preferred for sending, and
+In general, the `multipart/signed` form is preferred for sending, and
 receiving agents MUST be able to handle both.
 
 ###  Choosing a Format for Signed-Only Messages
@@ -1425,7 +1425,7 @@ receivers and the relative importance of receivers with S/MIME
 facilities being able to verify the signature versus the importance
 of receivers without S/MIME software being able to view the message.
 
-Messages signed using the multipart/signed format can always be
+Messages signed using the `multipart/signed` format can always be
 viewed by the receiver whether or not they have S/MIME software.
 They can also be viewed whether they are using a MIME-native user
 agent or they have messages translated by a gateway.  In this
@@ -1433,15 +1433,15 @@ context, "be viewed" means the ability to process the message
 essentially as if it were not a signed message, including any other
 MIME structure the message might have.
 
-Messages signed using the SignedData format cannot be viewed by a
+Messages signed using the `SignedData` format cannot be viewed by a
 recipient unless they have S/MIME facilities.  However, the
-SignedData format protects the message content from being changed by
+`SignedData` format protects the message content from being changed by
 benign intermediate agents.  Such agents might do line wrapping or
-content-transfer encoding changes that would break the signature.
+`content-transfer` encoding changes that would break the signature.
 
 ### Signing Using application/pkcs7-mime with SignedData
 
-This signing format uses the application/pkcs7-mime media type.  The
+This signing format uses the `application/pkcs7-mime` media type.  The
 steps to create this format are as follows:
 
 Step 1:
@@ -1449,18 +1449,18 @@ Step 1:
 
 Step 2:
 : The MIME entity and other required data are processed into a CMS
-object of type SignedData.
+object of type `SignedData`.
 
 Step 3:
-: The SignedData object is wrapped in a CMS ContentInfo object.
+: The `SignedData` object is wrapped in a CMS `ContentInfo` object.
 
 Step 4:
-: The ContentInfo object is inserted into an application/pkcs7-mime
+: The `ContentInfo` object is inserted into an `application/pkcs7-mime`
 MIME entity.
 
-The smime-type parameter for messages using application/pkcs7-mime
-with SignedData is "signed-data".  The file extension for this type
-of message is ".p7m".
+The `smime-type` parameter for messages using `application/pkcs7-mime`
+with `SignedData` is `signed-data`.  The file extension for this type
+of message is `.p7m`.
 
 A sample message would be:
 
@@ -1495,21 +1495,21 @@ eXle3YI5SKSBer/sAhQmCq7s/CTFHOEjgASeUjbMpx5g6A==
 
 This format is a clear-signing format.  Recipients without any S/MIME
 or CMS processing facilities are able to view the message.  It makes
-use of the multipart/signed media type described in {{RFC1847}}.  The
-multipart/signed media type has two parts.  The first part contains
+use of the `multipart/signed `media type described in {{RFC1847}}.  The
+`multipart/signed` media type has two parts.  The first part contains
 the MIME entity that is signed; the second part contains the
-"detached signature" CMS SignedData object in which the
-encapContentInfo eContent field is absent.
+"detached signature" CMS `SignedData` object in which the
+`encapContentInfo eContent` field is absent.
 
 #### The application/pkcs7-signature Media Type
 
-This media type always contains a CMS ContentInfo containing a single
-CMS object of type SignedData.  The SignedData encapContentInfo
-eContent field MUST be absent.  The signerInfos field contains the
+This media type always contains a CMS `ContentInfo` containing a single
+CMS object of type `SignedData`.  The `SignedData encapContentInfo`
+`eContent` field MUST be absent.  The `signerInfos` field contains the
 signatures for the MIME entity.
 
 The file extension for signed-only messages using
-application/pkcs7-signature is ".p7s".
+`application/pkcs7-signature` is `.p7s`.
 
 ####  Creating a multipart/signed Message
 
@@ -1519,38 +1519,38 @@ taking special care for clear-signing.
 
 Step 2:
 : The MIME entity is presented to CMS processing in order to obtain
-an object of type SignedData in which the encapContentInfo eContent
+an object of type `SignedData` in which the `encapContentInfo eContent`
 field is absent.
 
 Step 3:
 : The MIME entity is inserted into the first part of a
-multipart/signed message with no processing other than that
+`multipart/signed` message with no processing other than that
 described in Section 3.1.
 
 Step 4:
 : Transfer encoding is applied to the "detached signature" CMS
-SignedData object, and it is inserted into a MIME entity of
-type application/pkcs7-signature.
+`SignedData` object, and it is inserted into a MIME entity of
+type `application/pkcs7-signature`.
 
 Step 5:
-: The MIME entity of the application/pkcs7-signature is
-inserted into the second part of the multipart/signed
+: The MIME entity of the `application/pkcs7-signature` is
+inserted into the second part of the `multipart/signed`
 entity.
 
-The multipart/signed Content-Type has two required parameters: the
-protocol parameter and the micalg parameter.
+The `multipart/signed Content-Type` has two required parameters: the
+`protocol` parameter and the `micalg` parameter.
 
-The protocol parameter MUST be "application/pkcs7-signature".  Note
+The `protocol` parameter MUST be `"application/pkcs7-signature"`.  Note
 that quotation marks are required around the protocol parameter
 because MIME requires that the "/" character in the parameter value
 MUST be quoted.
 
-The micalg parameter allows for one-pass processing when the
-signature is being verified.  The value of the micalg parameter is
+The `micalg` parameter allows for one-pass processing when the
+signature is being verified.  The value of the `micalg` parameter is
 dependent on the message digest algorithm(s) used in the calculation
 of the Message Integrity Check.  If multiple message digest
 algorithms are used, they MUST be separated by commas per {{RFC1847}}.
-The values to be placed in the micalg parameter SHOULD be from the
+The values to be placed in the `micalg` parameter SHOULD be from the
 following:
 
 ~~~
@@ -1571,8 +1571,8 @@ Note:
 
 Historical note:
 : Some early implementations of S/MIME emitted and
-  expected "rsa-md5", "rsa-sha1", and "sha1" for the micalg parameter.)
-  Receiving agents SHOULD be able to recover gracefully from a micalg
+  expected `rsa-md5`, `rsa-sha1`, and `sha1` for the `micalg` parameter.
+  Receiving agents SHOULD be able to recover gracefully from a `micalg`
   parameter value that they do not recognize.  Future values for this
   parameter will be taken from the IANA "Hash Function Textual Names"
   registry.
@@ -1606,7 +1606,7 @@ Mv5jQEDiwVX5DRasxu6Ld8zv9u5/TsdBNiufGw==
 ------=_NextBoundary____Fri,_06_Sep_2002_00:25:21--
 ~~~
 
-The content that is digested (the first part of the multipart/signed)
+The content that is digested (the first part of the `multipart/signed`)
 consists of the bytes:
 
 54 68 69 73 20 69 73 20 73 6f 6d 65 20 73 61 6d 70 6c 65 20 63 6f 6e
@@ -1616,8 +1616,8 @@ consists of the bytes:
 
 This section describes the format for compressing a MIME entity.
 Please note that versions of S/MIME prior to version 3.1 did not
-specify any use of CompressedData and will not recognize it.  The use
-of a capability to indicate the ability to receive CompressedData is
+specify any use of `CompressedData` and will not recognize it.  The use
+of a capability to indicate the ability to receive `CompressedData` is
 described in {{!RFC3274}} and is the preferred method for compatibility.
 
 Step 1:
@@ -1625,18 +1625,18 @@ Step 1:
 
 Step 2:
 : The MIME entity and other required data are processed into a CMS
-object of type CompressedData.
+object of type `CompressedData`.
 
 Step 3:
-: The CompressedData object is wrapped in a CMS ContentInfo object.
+: The `CompressedData` object is wrapped in a CMS `ContentInfo` object.
 
 Step 4:
-: The ContentInfo object is inserted into an
-application/pkcs7-mime MIME entity.
+: The `ContentInfo` object is inserted into an
+`application/pkcs7-mime` MIME entity.
 
-The smime-type parameter for compressed-only messages is
-"compressed-data".  The file extension for this type of message
-is ".p7z".
+The `smime-type` parameter for compressed-only messages is
+`compressed-data`.  The file extension for this type of message
+is `.p7z`.
 
 A sample message would be:
 
@@ -1695,18 +1695,18 @@ such as in response to a registration request.
 Step 1:
 : The certificates and/or CRLs are made available to the CMS
 generating process that creates a CMS object of type
-SignedData.  The SignedData encapContentInfo eContent field
-MUST be absent, and the signerInfos field MUST be empty.
+`SignedData`.  The `SignedData encapContentInfo eContent` field
+MUST be absent, and the `signerInfos` field MUST be empty.
 
 Step 2:
-: The SignedData object is wrapped in a CMS ContentInfo object.
+: The `SignedData` object is wrapped in a CMS `ContentInfo` object.
 
 Step 3:
-: The ContentInfo object is enclosed in an
-application/pkcs7-mime MIME entity.
+: The `ContentInfo` object is enclosed in an
+`application/pkcs7-mime` MIME entity.
 
-The smime-type parameter for a certificate management message is
-"certs-only".  The file extension for this type of message is ".p7c".
+The `smime-type` parameter for a certificate management message is
+`certs-only`.  The file extension for this type of message is `.p7c`.
 
 ## Registration Requests
 
@@ -1717,7 +1717,7 @@ with a certification authority, through a hardware token or diskette,
 and so on.
 
 S/MIME v2 [SMIMEv2] specified a method for "registering" public keys
-with certificate authorities using an application/pkcs10 body part.
+with certificate authorities using an `application/pkcs10` body part.
 Since that time, the IETF PKIX Working Group has developed other
 methods for requesting certificates.  However, S/MIME v4.0 does not
 require a particular certificate request mechanism.
@@ -1731,9 +1731,9 @@ messages.  The following table lists criteria for determining whether
 or not a message is an S/MIME message.  A message is considered an
 S/MIME message if it matches any of the criteria listed below.
 
-The file suffix in the table below comes from the "name" parameter in
-the Content-Type header field or the "filename" parameter in the
-Content-Disposition header field.  The MIME parameters that carry the
+The file suffix in the table below comes from the `name` parameter in
+the `Content-Type` header field or the `filename` parameter in the
+`Content-Disposition` header field.  The MIME parameters that carry the
 file suffix are not listed below.
 
 ~~~
@@ -1849,7 +1849,7 @@ Key sizes for ECDH are fixed by the curve.
 # IANA Considerations
 
 This section (1) updates the media type registrations for
-application/pkcs7-mime and application/pkcs7-signature to refer to
+`application/pkcs7-mime` and `application/pkcs7-signature` to refer to
 this document as opposed to RFC 5751, (2) adds authEnveloped-data to
 the list of values for smime-type, and (3) updates references from
 RFC 5751 to this document in general.
@@ -2049,12 +2049,12 @@ other words, a sender SHOULD NOT send a copy of a message using
 weaker cryptography than they would use for the original of the
 message.
 
-Modification of the ciphertext in EnvelopedData can go undetected if
+Modification of the ciphertext in `EnvelopedData` can go undetected if
 authentication is not also used, which is the case when sending
-EnvelopedData without wrapping it in SignedData or enclosing
-SignedData within it.  This is one of the reasons for moving from
-EnvelopedData to AuthEnvelopedData, as the authenticated encryption
-algorithms provide the authentication without needing the SignedData
+`EnvelopedData` without wrapping it in `SignedData` or enclosing
+`SignedData` within it.  This is one of the reasons for moving from
+`EnvelopedData` to `AuthEnvelopedData`, as the authenticated encryption
+algorithms provide the authentication without needing the `SignedData`
 layer.
 
 If an implementation is concerned about compliance with National
@@ -2147,10 +2147,10 @@ possible and that the decrypted content not be acted on prior to
 finishing the integrity check.
 
 The other attack that is highlighted in {{Efail}} is due to an error in
-how mail clients deal with HTML and multipart/mixed messages.
-Clients MUST require that a text/html content type be a complete HTML
+how mail clients deal with HTML and `multipart/mixed` messages.
+Clients MUST require that a `text/html` content type be a complete HTML
 document (per {{?RFC1866}}).  Clients SHOULD treat each of the different
-pieces of the multipart/mixed construct as being of different
+pieces of the `multipart/mixed` construct as being of different
 origins.  Clients MUST treat each encrypted or signed piece of a MIME
 message as being of different origins both from unprotected content
 and from each other.
@@ -2269,7 +2269,7 @@ This appendix contains a number of references to documents that have
 been obsoleted or replaced.  This is intentional, as the updated
 documents often do not have the same information in them.
 
-## DigestAlgorithmIdentifier
+## `DigestAlgorithmIdentifier`
 
 The following algorithms have been called out for some level of
 support by previous S/MIME specifications:
@@ -2340,17 +2340,17 @@ some issues have been created that can cause interoperability
 problems:
 
 - S/MIME v2 clients are only required to verify digital signatures
-  using the rsaEncryption algorithm with SHA-1 or MD5 and might not
-  implement id-dsa-with-sha1 or id-dsa at all.
+  using the `rsaEncryption` algorithm with SHA-1 or MD5 and might not
+  implement `id-dsa-with-sha1` or `id-dsa` at all.
 - S/MIME v3 clients might only implement signing or signature
-  verification using id-dsa-with-sha1 and might also use id-dsa as
-  an AlgorithmIdentifier in this field.
-- Note that S/MIME v3.1 clients support verifying id-dsa-with-sha1
-  and rsaEncryption and might not implement sha256WithRSAEncryption.
+  verification using `id-dsa-with-sha1` and might also use `id-dsa` as
+  an `AlgorithmIdentifier` in this field.
+- Note that S/MIME v3.1 clients support verifying `id-dsa-with-sha1`
+  and `rsaEncryption` and might not implement `sha256WithRSAEncryption`.
 
 NOTE:
-: Receiving clients SHOULD recognize id-dsa as equivalent to
-  id-dsa-with-sha1.
+: Receiving clients SHOULD recognize `id-dsa` as equivalent to
+  `id-dsa-with-sha1`.
 
 For 512-bit RSA with SHA-1, see {{RFC3370}} and {{FIPS186-2}} without
 Change Notice 1; for 512-bit RSA with SHA-256, see {{RFC5754}} and
@@ -2367,7 +2367,7 @@ above DSA with SHA-256, see {{RFC5754}} and {{FIPS186-4}}.  The first
 reference provides the signature algorithm's OID, and the second
 provides the signature algorithm's definition.
 
-## ContentEncryptionAlgorithmIdentifier
+## `ContentEncryptionAlgorithmIdentifier`
 
 The following algorithms have been called out for some level of
 support by previous S/MIME specifications:
@@ -2382,7 +2382,7 @@ support by previous S/MIME specifications:
    should be supported only to decrypt existing email; it should not
    be used to encrypt new emails.
 
-## KeyEncryptionAlgorithmIdentifier
+## `KeyEncryptionAlgorithmIdentifier`
 
 The following algorithms have been called out for some level of
 support by previous S/MIME specifications:

@@ -306,7 +306,7 @@ from {{?RFC5750}}.
 -  Section 1.3: Added text about v3.1 RFCs.
 
 -  Section 3: Aligned email address text with RFC 5280.  Updated note
-   to indicate that the emailAddress IA5String upper bound is
+   to indicate that the `emailAddress IA5String` upper bound is
    255 characters.  Added text about matching email addresses.
 
 -  Section 4.2: Added text to indicate how S/MIME agents locate the
@@ -317,7 +317,7 @@ from {{?RFC5750}}.
    RSA with MD5 changed to SHOULD-; and RSASSA-PSS with SHA-256 added
    as SHOULD+.  Updated key sizes and changed pointer to PKIX RFCs.
 
--  Section 4.4.1: Aligned with PKIX on the use of a basicConstraints
+-  Section 4.4.1: Aligned with PKIX on the use of a `basicConstraints`
    extension in CA certificates.  Clarified which extension is used
    to constrain end entities from using their keys to perform
    issuing-authority operations.
@@ -456,12 +456,12 @@ specification that addresses AC use is defined in {{?RFC3114}}.
 
 End-entity certificates MAY contain an Internet mail address.
 Email addresses restricted to 7-bit ASCII characters use the<br />
-pkcs-9-at-emailAddress object identifier (OID) (see below) and are
+`pkcs-9-at-emailAddress` object identifier (OID) (see below) and are
 encoded as described in {{Section 4.2.1.6 of RFC5280}}.
 Internationalized email address names use the OID defined in
 {{!RFC8398}} and are encoded as described therein.  The email address
-SHOULD be in the subjectAltName extension and SHOULD NOT be in the
-subject distinguished name.
+SHOULD be in the `subjectAltName` extension and SHOULD NOT be in the
+`subject` distinguished name.
 
 Receiving agents MUST recognize and accept certificates that contain
 no email address.  Agents are allowed to provide an alternative
@@ -469,9 +469,9 @@ mechanism for associating an email address with a certificate that
 does not contain an email address, such as through the use of the
 agent's address book, if available.  Receiving agents MUST recognize
 both ASCII and internationalized email addresses in the
-subjectAltName extension.  Receiving agents MUST recognize email
+`subjectAltName` extension.  Receiving agents MUST recognize email
 addresses in the distinguished name field in the PKCS #9 {{!RFC2985}}
-emailAddress attribute:
+`emailAddress` attribute:
 
 pkcs-9-at-emailAddress OBJECT IDENTIFIER ::=<br>
 { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-9(9) 1 }
@@ -488,10 +488,10 @@ transformations on the local name component before doing the
 comparison; however, an S/MIME client cannot know what specific
 localities do.
 
-Sending agents SHOULD make the address in the From or Sender header
+Sending agents SHOULD make the address in the `From` or `Sender` header
 in a mail message match an Internet mail address in the signer's
 certificate.  Receiving agents MUST check that the address in the
-From or Sender header of a mail message matches an Internet mail
+`From` or `Sender` header of a mail message matches an Internet mail
 address in the signer's certificate, if mail addresses are present in
 the certificate.  A receiving agent SHOULD provide some explicit
 alternate processing of the message if this comparison fails; this
@@ -499,15 +499,15 @@ might be done by displaying or logging a message that shows the
 recipient the mail addresses in the certificate or other certificate
 details.
 
-A receiving agent SHOULD display a subject name or other certificate
+A receiving agent SHOULD display a `subject` name or other certificate
 details when displaying an indication of successful or unsuccessful
 signature verification.
 
-All subject and issuer names MUST be populated (i.e., not an empty
-SEQUENCE) in S/MIME-compliant X.509 certificates, except that the
-subject distinguished name in a user's (i.e., an end entity's)
-certificate MAY be an empty SEQUENCE, in which case the
-subjectAltName extension will include the subject's identifier and
+All `subject` and `issuer` names MUST be populated (i.e., not an empty
+`SEQUENCE`) in S/MIME-compliant X.509 certificates, except that the
+`subject` distinguished name in a user's (i.e., an end entity's)
+certificate MAY be an empty `SEQUENCE`, in which case the
+`subjectAltName` extension will include the subject's identifier and
 MUST be marked as critical.
 
 # Certificate Processing
@@ -605,19 +605,19 @@ certificate and CRL retrieval mechanisms for path validation on
 incoming signed messages.
 
 When verifying a signature and the certificates that are included in
-the message, if a signingCertificate attribute from RFC 2634 [ESS] or
-a signingCertificateV2 attribute from RFC 5035 [ESS] is found in an
+the message, if a `signingCertificate` attribute from RFC 2634 [ESS] or
+a `signingCertificateV2` attribute from RFC 5035 [ESS] is found in an
 S/MIME message, it SHALL be used to identify the signer's
 certificate.  Otherwise, the certificate is identified in an S/MIME
-message, using either (1) the issuerAndSerialNumber, which identifies
-the signer's certificate by the issuer's distinguished name and the
-certificate serial number or (2) the subjectKeyIdentifier, which
+message, using either (1) the `issuerAndSerialNumber`, which identifies
+the signer's certificate by the `issuer`'s distinguished name and the
+certificate serial number or (2) the `subjectKeyIdentifier`, which
 identifies the signer's certificate by a key identifier.
 
 When decrypting an encrypted message, if an
-SMIMEEncryptionKeyPreference attribute is found in an encapsulating
-SignedData, it SHALL be used to identify the originator's certificate
-found in OriginatorInfo.  See {{RFC5652}} for the CMS fields that
+`SMIMEEncryptionKeyPreference` attribute is found in an encapsulating
+`SignedData`, it SHALL be used to identify the originator's certificate
+found in `OriginatorInfo`.  See {{RFC5652}} for the CMS fields that
 reference the originator's and recipient's certificates.
 
 ## Certificate and CRL Signing Algorithms, and Key Sizes
@@ -635,7 +635,7 @@ Receiving agents:
    with SHA-256.
 
 Implementations SHOULD use deterministic generation for the parameter
-'k' for ECDSA as outlined in {{!RFC6979}}.  EdDSA is defined to generate
+`k` for ECDSA as outlined in {{!RFC6979}}.  EdDSA is defined to generate
 this parameter deterministically.
 
 The following are the RSA and RSASSA-PSS key size requirements for<br />
@@ -690,7 +690,7 @@ exist to gracefully handle other certificate extensions when they
 appear in end-entity or CA certificates.
 
 Certificates issued for the S/MIME environment SHOULD NOT contain any
-critical extensions (extensions that have the critical field set to
+critical extensions (extensions that have the `critical` field set to
 TRUE) other than those listed here.  These extensions SHOULD be
 marked as non-critical, unless the proper handling of the extension
 is deemed critical to the correct interpretation of the associated
@@ -702,17 +702,17 @@ unless otherwise specified here.
 
 ### Basic Constraints
 
-The basicConstraints extension serves to delimit the role and
+The `basicConstraints` extension serves to delimit the role and
 position that an issuing-authority or end-entity certificate plays in
 a certification path.
 
 For example, certificates issued to CAs and subordinate CAs contain a
-basicConstraints extension that identifies them as issuing-authority
+`basicConstraints` extension that identifies them as issuing-authority
 certificates.  End-entity certificates contain the key usage
 extension, which restrains end entities from using the key when
 performing issuing-authority operations (see {{ku-ext}}).
 
-As per {{RFC5280}}, certificates MUST contain a basicConstraints
+As per {{RFC5280}}, certificates MUST contain a `basicConstraints`
 extension in CA certificates and SHOULD NOT contain that extension in
 end-entity certificates.
 
@@ -728,19 +728,19 @@ contain a key usage extension that specifies that the corresponding
 public key can be used to sign end-user certificates and CRLs.
 
 If a key usage extension is included in a PKIX certificate, then it
-MUST be marked as critical.
+MUST be marked as `critical`.
 
-S/MIME receiving agents MUST NOT accept the signature of a message if
+S/MIME receiving agents MUST NOT accept the `signature` of a message if
 it was verified using a certificate that contains a key usage
-extension without at least one of the digitalSignature or
-nonRepudiation bits set.  Sometimes S/MIME is used as a secure
+extension without at least one of the `digitalSignature` or
+`nonRepudiation` bits set.  Sometimes S/MIME is used as a secure
 message transport for applications beyond interpersonal messaging; in
 such cases, the S/MIME-enabled application can specify additional
-requirements concerning the digitalSignature or nonRepudiation bits
+requirements concerning the `digitalSignature` or `nonRepudiation` bits
 within this extension.
 
 If the key usage extension is not specified, receiving clients MUST
-presume that both the digitalSignature and nonRepudiation bits
+presume that both the `digitalSignature` and `nonRepudiation` bits
 are set.
 
 ### Subject Alternative Name
@@ -749,11 +749,11 @@ The subject alternative name extension is used in S/MIME as the
 preferred means to convey the email address or addresses that
 correspond to the entity for this certificate.  If the local portion
 of the email address is ASCII, it MUST be encoded using the
-rfc822Name CHOICE of the GeneralName type as described in {{RFC5280}},
+`rfc822Name CHOICE` of the `GeneralName` type as described in {{RFC5280}},
 Section 4.2.1.6.  If the local portion of the email address is not
-ASCII, it MUST be encoded using the otherName CHOICE of the
-GeneralName type as described in {{RFC8398}}, Section 3.  Since the
-SubjectAltName type is a SEQUENCE OF GeneralName, multiple email
+ASCII, it MUST be encoded using the `otherName CHOICE` of the
+`GeneralName` type as described in {{RFC8398}}, Section 3.  Since the
+`SubjectAltName` type is a `SEQUENCE OF GeneralName`, multiple email
 addresses MAY be present.
 
 ### Extended Key Usage Extension
@@ -766,7 +766,7 @@ extended key usage extensions.
 
 For example, if the certificate contains a key usage extension
 indicating a digital signature and an extended key usage extension
-that includes the id-kp-emailProtection OID, then the certificate may
+that includes the `id-kp-emailProtection` OID, then the certificate may
 be used for signing but not encrypting S/MIME messages.  If the
 certificate contains a key usage extension indicating a digital
 signature but no extended key usage extension, then the certificate
@@ -774,8 +774,8 @@ may also be used to sign but not encrypt S/MIME messages.
 
 If the extended key usage extension is present in the certificate,
 then interpersonal-message S/MIME receiving agents MUST check that it
-contains either the id-kp-emailProtection OID or the
-anyExtendedKeyUsage OID as defined in {{RFC5280}}.  S/MIME uses other
+contains either the `id-kp-emailProtection` OID or the
+`anyExtendedKeyUsage` OID as defined in {{RFC5280}}.  S/MIME uses other
 than interpersonal messaging MAY require the explicit presence of the
 extended key usage extension, the presence of other OIDs in the
 extension, or both.
@@ -842,10 +842,10 @@ follows:
 -  The time the message was received is stored in a secure manner and
    is used at a later time to validate the message.
 
--  The time in a SigningTime attribute is found in a countersignature
+-  The time in a `SigningTime` attribute is found in a `countersignature`
    attribute {{RFC5652}} that has been successfully validated.
 
-The signingTime attribute could be deliberately set to a time where
+The `signingTime` attribute could be deliberately set to a time where
 the receiving agent would (1) use a CRL that does not contain a
 revocation for the signing certificate or (2) use a certificate that
 has expired or is not yet valid.  This could be done by either
