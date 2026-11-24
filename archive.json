@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-11-19T05:12:17.652959+00:00",
+  "timestamp": "2026-11-24T07:43:10.977132+00:00",
   "repo": "lamps-wg/smime-v5",
   "labels": [
     {
@@ -373,13 +373,13 @@
       "labels": [],
       "body": "1st attempt at italicizing all the field names in -rfc8550bis and -rfc8551bis.",
       "createdAt": "2026-11-15T00:57:09Z",
-      "updatedAt": "2026-11-17T06:05:46Z",
+      "updatedAt": "2026-11-23T13:46:22Z",
       "baseRepository": "lamps-wg/smime-v5",
       "baseRefName": "main",
       "baseRefOid": "a8f093f8875e6ab2fceed274950a9e5b073eb08f",
       "headRepository": "lamps-wg/smime-v5",
       "headRefName": "seanturner-italicize-field-names",
-      "headRefOid": "7058786b56ad94dda5e6cf032d186cc60b8d4d15",
+      "headRefOid": "2593738cf2945eb465df69067788d15e20b2dcd3",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
